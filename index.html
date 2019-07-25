@@ -1,21 +1,126 @@
 <!DOCTYPE html>
-<html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
 <head><meta name="generator" content="Hexo 3.9.0">
-    <meta charset="utf-8">
-<title>Hexo</title>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
 
 
 
-    <meta property="og:type" content="website">
+
+
+
+
+
+
+
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.2.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.2.0" color="#222">
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css?v=7.2.0">
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.2.0',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    }
+  };
+</script>
+
+  <meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
 <meta property="og:url" content="http://yoursite.com/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:locale" content="default">
-<meta property="og:image" content="http://yoursite.com/images/og_image.png">
+<meta property="og:locale" content="zh-CN">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo">
-<meta name="twitter:image" content="http://yoursite.com/images/og_image.png">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="http://yoursite.com/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  
+  <title>Hexo</title>
+  
 
 
 
@@ -23,990 +128,1290 @@
 
 
 
-<link rel="icon" href="/images/favicon.svg">
 
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
 
 
-    
-    
-    
-    <style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
-    
 
-    
-    
-    
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
-    
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
 
-    
-    
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
 
-
-    
-    
-    
-    
-
-<link rel="stylesheet" href="/css/back-to-top.css">
-
-
-    
-    
-
-    
-    
-    
-    
-
-    
-    
-<link rel="stylesheet" href="/css/progressbar.css">
-<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
-
-    
-    
-    
-
-    
-    
-    
-
-
-<link rel="stylesheet" href="/css/style.css">
 </head>
-<body class="is-3-column">
-    <nav class="navbar navbar-main">
-    <div class="container">
-        <div class="navbar-brand is-flex-center">
-            <a class="navbar-item navbar-logo" href="/">
-            
-                <img src="/images/logo.svg" alt="Hexo" height="28">
-            
-            </a>
-        </div>
-        <div class="navbar-menu">
-            
-            <div class="navbar-start">
-                
-                <a class="navbar-item is-active" href="/">Home</a>
-                
-                <a class="navbar-item" href="/archives">Archives</a>
-                
-                <a class="navbar-item" href="/categories">Categories</a>
-                
-                <a class="navbar-item" href="/tags">Tags</a>
-                
-                <a class="navbar-item" href="/about">About</a>
-                
-            </div>
-            
-            <div class="navbar-end">
-                
-                    
-                    
-                    <a class="navbar-item" target="_blank" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus">
-                        
-                        <i class="fab fa-github"></i>
-                        
-                    </a>
-                    
-                
-                
-                
-                <a class="navbar-item search" title="Search" href="javascript:;">
-                    <i class="fas fa-search"></i>
-                </a>
-                
-            </div>
-        </div>
-    </div>
-</nav>
-    
-    <section class="section">
-        <div class="container">
-            <div class="columns">
-                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-07-24T14:36:35.961Z">2019-07-24</time>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    5 minutes read (About 728 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/07/24/EM算法/">EM算法</a>
-            
-        </h1>
-        <div class="content">
-            <p>EM算法就是含有隐变量的概率模型参数的极大似然估计法（或极大后验概率估计法）<br>用$x$表示观测变量（的数据），$z$表示隐变量，$\theta$表示需要估计的模型参数。<br>给定观测数据$x$，其似然函数为$p(x|\theta)$，对数似然函数$L(\theta) \triangleq \ln p(x|\theta)$。<br>极大似然估计：<br>$$<br>\max_{\theta}L(\theta)<br>$$</p>
-<h1 id="EM算法"><a href="#EM算法" class="headerlink" title="EM算法"></a>EM算法</h1><p>算法是迭代进行的，假设第$n$轮迭代得到的参数估计为$\theta_n$，希望下一轮迭代使得$L(\theta)&gt;L(\theta_n)$<br>$$<br>\begin{aligned}<br>L(\theta)-L(\theta_n) &amp;=\ln \left(\sum_zp(x,z|\theta)\right)-\ln p(x|\theta_n)\<br>\end{aligned}<br>$$<br>对数函数是凹函数，满足Jensen不等式：<br>$$<br>\log \left(\sum_j\lambda_jy_j\right)\geq \sum_j \lambda_j\log y_j<br>$$<br>其中$\lambda_j\geq 0, \sum_j\lambda_j=1$<br>那么<br>$$<br>\begin{aligned}<br>L(\theta)-L(\theta_n) &amp;=\ln \left(\sum_zp(z|x,\theta_n)\frac{p(x,z|\theta)}{p(z|x,\theta_n)}\right)-\ln p(x|\theta_n)\<br>&amp;\geq \sum_zp(z|x,\theta_n)\ln\frac{p(x,z|\theta)}{p(z|x,\theta_n)}-\ln p(x|\theta_n)\<br>&amp;=\sum_zp(z|x,\theta_n)\ln\frac{p(x,z|\theta)}{p(z|x,\theta_n)}-\left(\sum_zp(z|x,\theta_n)\right)\ln p(x|\theta_n)\<br>&amp;=\sum_zp(z|x,\theta_n)\ln\frac{p(x,z|\theta)}{p(z,x|\theta_n)}<br>\end{aligned}<br>$$<br>即：<br>$$<br>\begin{aligned}<br>L(\theta)&amp;\geq L(\theta_n)+\sum_zp(z|x,\theta_n)\ln\frac{p(x,z|\theta)}{p(z,x|\theta_n)}\<br>&amp;\triangleq B(\theta,\theta_n)<br>\end{aligned}<br>$$<br>也就是$B(\theta,\theta_n)$是$L(\theta)$的一个下界函数。而且容易看到：<br>$$<br>B(\theta_n,\theta_n) = L(\theta_n)<br>$$<br>即自变量等于$\theta_n$时，两个函数值是相等的。<br>那么如果找一个$\theta_{n+1}$，使得$B(\theta_{n+1},\theta_n)\geq B(\theta_n,\theta_n)$，那么<br>$$<br>\begin{aligned}<br>L(\theta_{n+1})&amp;\geq B(\theta_{n+1},\theta_n)\<br>&amp;\geq B(\theta_n,\theta_n)\<br>&amp;=L(\theta_n)<br>\end{aligned}<br>$$<br>一种方法是使：<br>$$<br>\theta_{n+1}=\operatorname{argmax} B(\theta,\theta_n)<br>$$<br>但是注意这样并不能保证$L(\theta)$的增长也能极大化，这和$L(\theta)$的具体形状有关。<br>容易看出，使$B(\theta,\theta_n)$极大化，等价于极大化下面的式子<br>$$<br>Q(\theta,\theta_n)\triangleq \sum_zp(z|x,\theta_n)\ln p(x,z|\theta)<br>$$<br>这个式子有着鲜明的含义：<br>当有了$x,\theta$，根据$z$的概率分布$p(z|x,\theta_n)$可以采样出$z$，这样就有了完整的数据，可以做平常的极大似然估计。<br>因此EM算法的步骤是：<br>E步：求完整数据对数似然的期望，这个期望是在概率分布$p(z|x,\theta_n)$下求的。<br>M步：极大化，只是保证$L(\theta)$增大的一种方式。</p>
-<p>在E步中，$\ln p(x,z|\theta)$应该是很好算的，$p(z|x,\theta)$也好算：<br>$$<br>p(z|x,\theta)=\frac{p(x,z|\theta)}{p(x|\theta)}=\frac{p(x,z|\theta)}{\sum_{z’}p(x,z’|\theta)}<br>$$</p>
 
-        </div>
-        
-        
-        
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left 
+  page-home">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
     </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
 </div>
 
 
 
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-content article ">
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
         
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-07-24T14:31:35.771Z">2019-07-24</time>
+        
+        
+          
+          <li class="menu-item menu-item-home menu-item-active">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/24/EM算法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
                 
                 
-                <span class="level-item has-text-grey">
-                    
-                    
-                    2 minutes read (About 365 words)
+                <a href="/2019/07/24/EM算法/" class="post-title-link" itemprop="url">EM算法</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-07-24 22:36:35" itemprop="dateCreated datePublished" datetime="2019-07-24T22:36:35+08:00">2019-07-24</time>
+            </span>
+          
+
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
                 </span>
                 
+                  <span class="post-meta-item-text">更新于</span>
                 
-            </div>
+                <time title="修改时间：2019-07-25 21:38:39" itemprop="dateModified" datetime="2019-07-25T21:38:39+08:00">2019-07-25</time>
+              </span>
+            
+          
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          <br>
+          
+
+          
+
+          
+
         </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
         
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+          
+            <p>EM算法就是含有隐变量的概率模型参数的极大似然估计法（或极大后验概率估计法）<br>用$x$表示观测变量（的数据），$z$表示隐变量，$\theta$表示需要估计的模型参数。<br>给定观测数据$x$，其似然函数为$p(x|\theta)$，对数似然函数$L(\theta) \triangleq \ln p(x|\theta)$。<br>极大似然估计：</p>
+<script type="math/tex; mode=display">
+\max_{\theta}L(\theta)</script><h1 id="EM算法"><a href="#EM算法" class="headerlink" title="EM算法"></a>EM算法</h1><p>算法是迭代进行的，假设第$n$轮迭代得到的参数估计为$\theta_n$，希望下一轮迭代使得$L(\theta)&gt;L(\theta_n)$</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+L(\theta)-L(\theta_n) &=\ln \left(\sum_zp(x,z|\theta)\right)-\ln p(x|\theta_n)\\
+\end{aligned}</script><p>对数函数是凹函数，满足Jensen不等式：</p>
+<script type="math/tex; mode=display">
+\log \left(\sum_j\lambda_jy_j\right)\geq \sum_j \lambda_j\log y_j</script><p>其中$\lambda_j\geq 0, \sum_j\lambda_j=1$<br>那么</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+L(\theta)-L(\theta_n) &=\ln \left(\sum_zp(z|x,\theta_n)\frac{p(x,z|\theta)}{p(z|x,\theta_n)}\right)-\ln p(x|\theta_n)\\
+&\geq \sum_zp(z|x,\theta_n)\ln\frac{p(x,z|\theta)}{p(z|x,\theta_n)}-\ln p(x|\theta_n)\\
+&=\sum_zp(z|x,\theta_n)\ln\frac{p(x,z|\theta)}{p(z|x,\theta_n)}-\left(\sum_zp(z|x,\theta_n)\right)\ln p(x|\theta_n)\\
+&=\sum_zp(z|x,\theta_n)\ln\frac{p(x,z|\theta)}{p(z,x|\theta_n)}
+\end{aligned}</script><p>即：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+L(\theta)&\geq L(\theta_n)+\sum_zp(z|x,\theta_n)\ln\frac{p(x,z|\theta)}{p(z,x|\theta_n)}\\
+&\triangleq B(\theta,\theta_n)
+\end{aligned}</script><p>也就是$B(\theta,\theta_n)$是$L(\theta)$的一个下界函数。而且容易看到：</p>
+<script type="math/tex; mode=display">
+B(\theta_n,\theta_n) = L(\theta_n)</script><p>即自变量等于$\theta_n$时，两个函数值是相等的。<br>那么如果找一个$\theta_{n+1}$，使得$B(\theta_{n+1},\theta_n)\geq B(\theta_n,\theta_n)$，那么</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+L(\theta_{n+1})&\geq B(\theta_{n+1},\theta_n)\\
+&\geq B(\theta_n,\theta_n)\\
+&=L(\theta_n)
+\end{aligned}</script><p>一种方法是使：</p>
+<script type="math/tex; mode=display">
+\theta_{n+1}=\operatorname{argmax} B(\theta,\theta_n)</script><p>但是注意这样并不能保证$L(\theta)$的增长也能极大化，这和$L(\theta)$的具体形状有关。<br>容易看出，使$B(\theta,\theta_n)$极大化，等价于极大化下面的式子</p>
+<script type="math/tex; mode=display">
+Q(\theta,\theta_n)\triangleq \sum_zp(z|x,\theta_n)\ln p(x,z|\theta)</script><p>这个式子有着鲜明的含义：<br>当有了$x,\theta$，根据$z$的概率分布$p(z|x,\theta_n)$可以采样出$z$，这样就有了完整的数据，可以做平常的极大似然估计。<br>因此EM算法的步骤是：<br>E步：求完整数据对数似然的期望，这个期望是在概率分布$p(z|x,\theta_n)$下求的。<br>M步：极大化，只是保证$L(\theta)$增大的一种方式。</p>
+<p>在E步中，$\ln p(x,z|\theta)$应该是很好算的，$p(z|x,\theta)$也好算：</p>
+<script type="math/tex; mode=display">
+p(z|x,\theta)=\frac{p(x,z|\theta)}{p(x|\theta)}=\frac{p(x,z|\theta)}{\sum_{z'}p(x,z'|\theta)}</script>
+          
+        
+      
+    </div>
+
+    
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/24/Yet Again a Subarray Problem/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/07/24/Yet Again a Subarray Problem/" class="post-title-link" itemprop="url">Yet Again a Subarray Problem</a>
+              
             
-                <a class="has-link-black-ter" href="/2019/07/24/Yet Again a Subarray Problem/">Yet Again a Subarray Problem</a>
+          </h1>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-07-24 22:31:35 / 修改时间：22:32:23" itemprop="dateCreated datePublished" datetime="2019-07-24T22:31:35+08:00">2019-07-24</time>
+            </span>
+          
+
+          
             
-        </h1>
-        <div class="content">
+
+            
+          
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          <br>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
             <p><a href="https://www.codechef.com/problems/SUBPRNJL" target="_blank" rel="noopener">题目</a></p>
 <h1 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h1><p>给定一个数组$A$，长度$N&lt;2000$，$A_i&lt;2000$。对于它的每个连续子序列，计算这个子序列中第$K$小的数（$K$随子序列而不同，这不是问题重点），记为$x$，得到$x$在子序列中出现的次数$F$。如果$F$在子序列中也出现过，那么答案加一，求总的答案。</p>
 <h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><h2 id="解法一-线段树"><a href="#解法一-线段树" class="headerlink" title="解法一 线段树"></a>解法一 线段树</h2><p>对于左端点下标为$i$的子序列，在递增右端点的过程中，可以连续处理。线段树中节点保存的是值在$[l,r]$之间的数在当前子序列中出现的次数，而不是序列中的下标。那么根据左子节点中保存的数和$K$的关系，很容易找到第$K$小的数对应的叶节点，也就得到$F$。然后再看$F$对应的叶节点中保存的出现次数是否为0即可。</p>
 <h2 id="解法二-预处理-二分"><a href="#解法二-预处理-二分" class="headerlink" title="解法二 预处理+二分"></a>解法二 预处理+二分</h2><p>首先预处理得到<code>PRE[x][r]</code>，表示$[1,r]$子序列中$\leq x$的数的个数。预处理后可以$O(1)$计算$[l,r]$子序列中$\leq x$的数的个数。二分$x$就可得到第$K$小的数。根据<code>PRE[x][r]</code>也可以$O(1)$得到$[l,r]$子序列中等于$x$的数的个数，因此问题解决。</p>
 
-        </div>
+          
         
-        
-        
+      
     </div>
-</div>
 
-
-
-
-
-
-
-
-    <div class="card">
     
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-07-24T14:21:29.056Z">2019-07-24</time>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    a minute read (About 180 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/07/24/最长上升子序列(LIS)的nlogn算法/">最长上升子序列(LIS)的nlogn算法</a>
-            
-        </h1>
-        <div class="content">
-            <p>序列用$A$表示，处理到当前元素为止，长度为$i$的子序列的最小的结尾元素用$B_i$表示。序列$B$是单调增的，即<br>$$<br>B_i&lt;B_j \quad \text{if}\quad i&lt;j<br>$$<br>因为如果$B_i\geq B_j$，那么$B_j$对应的子序列中的第$i$个数是小于$B_i$的，这与$B_i$是最小的矛盾。<br>假设当前LIS长度为$L$，现在要计算以$A_k$结尾的LIS，只需二分长度$l$，看是否满足$B_l&lt;A_k$。假设以$A_k$结尾的LIS长度为$m$，再进行一次更新：</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">B[m] = min(B[m], A[k]);</span><br><span class="line">L = max(L, m);</span><br></pre></td></tr></table></figure>
 
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/24/最长上升子序列(LIS)的nlogn算法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/07/24/最长上升子序列(LIS)的nlogn算法/" class="post-title-link" itemprop="url">最长上升子序列(LIS)的nlogn算法</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-07-24 22:21:29 / 修改时间：22:28:32" itemprop="dateCreated datePublished" datetime="2019-07-24T22:21:29+08:00">2019-07-24</time>
+            </span>
+          
+
+          
+            
+
+            
+          
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          <br>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>序列用$A$表示，处理到当前元素为止，长度为$i$的子序列的最小的结尾元素用$B_i$表示。序列$B$是单调增的，即</p>
+<script type="math/tex; mode=display">
+B_i<B_j \quad \text{if}\quad i<j</script><p>因为如果$B_i\geq B_j$，那么$B_j$对应的子序列中的第$i$个数是小于$B_i$的，这与$B_i$是最小的矛盾。<br>假设当前LIS长度为$L$，现在要计算以$A_k$结尾的LIS，只需二分长度$l$，看是否满足$B_l<a_k$。假设以$a_k$结尾的lis长度为$m$，再进行一次更新： <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">B[m] = min(B[m], A[k]);</span><br><span class="line">L = max(L, m);</span><br></pre></td></tr></table></a_k$。假设以$a_k$结尾的lis长度为$m$，再进行一次更新：></p>
 <p>即可。</p>
 
-        </div>
+          
         
-        
-        
+      
     </div>
-</div>
 
-
-
-
-
-
-
-
-    <div class="card">
     
-    <div class="card-content article ">
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/24/Biject Inside/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
         
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-07-24T14:19:15.208Z">2019-07-24</time>
+        
+          <h1 class="post-title" itemprop="name headline">
                 
                 
-                <span class="level-item has-text-grey">
-                    
-                    
-                    4 minutes read (About 592 words)
-                </span>
+                <a href="/2019/07/24/Biject Inside/" class="post-title-link" itemprop="url">Biject Inside</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
                 
-                
-            </div>
+              
+
+              <time title="创建时间：2019-07-24 22:19:15 / 修改时间：22:26:07" itemprop="dateCreated datePublished" datetime="2019-07-24T22:19:15+08:00">2019-07-24</time>
+            </span>
+          
+
+          
+            
+
+            
+          
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          <br>
+          
+
+          
+
+          
+
         </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
         
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/07/24/Biject Inside/">Biject Inside</a>
-            
-        </h1>
-        <div class="content">
+          
             <p><a href="https://www.hackerearth.com/zh/problem/algorithm/biject-outside-aa04dd45/description/" target="_blank" rel="noopener">题目地址</a><br>又是想了很久也没做出来，写下官方题解吧。</p>
 <h1 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h1><p>A随机选择1 ~ n的一个排列$p$，B随机选择1 ~ n的一个子集$S$，如果存在$1\leq i \leq n$，使得$i,p_i$都在$S$中，A就赢了。问A赢的概率。</p>
-<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>给定一个排列$p$，要求有哪些集合使得A能赢是困难的，因为这和具体的排列有关。可以反过来，即给定$B$的集合$S$，求有多少种排列能让A赢，这个数只和$|S|$有关，因此容易处理。<br>下面先计算使A输的情况，因为这容易算。<br>假设$S$的大小为$k$，令$i=S_j$，其中$1\leq j \leq k$。那么$p_i$不能取$S$中的元素，只能从剩下的$n-k$个元素中选。这样的数量为$A_{n-k}^k$。剩下的$n-k$个$i$对应的$p_i$可以随便选，为$(n-k)!$，因此一个大小为$k$的集合让A输的排列有$A_{n-k}^k(n-k)!$种。再考虑到大小为$k$的集合有$C_{n}^k$个，最后对$k$求和，总数为：<br>$$<br>\displaystyle\sum_{k=0}^n C_{n}^kA_{n-k}^k(n-k)!=n!\sum_{k=0}^nC_{n-k}^k<br>$$<br>需要计算$\sum_{k=0}^nC_{n-k}^k\triangleq g(n)$，这实际上和Fibonacci数有关。下面证明。<br><a href="https://math.stackexchange.com/questions/81805/how-to-show-that-this-binomial-sum-satisfies-the-fibonacci-relation/169927#169927" target="_blank" rel="noopener">证明</a><br>考虑由0,1构成的n位字符串的数量，其中没有两个1相邻。</p>
-<h2 id="证明第一部分"><a href="#证明第一部分" class="headerlink" title="证明第一部分"></a>证明第一部分</h2><p>首先证明这是Fibonacci数。<br>用$f_{n}$表示$n$位的数量，$f_{n,0}$表示0结尾的答案，$f_{n,1}$表示1结尾的答案。<br>显然<br>$$<br>f_{n,0}=f_{n-1}\<br>f_{n,1}=f_{n-1,0}<br>$$<br>相加得：<br>$f_n=f_{n-1}+f_{n-1,0}=f_{n-1}+f_{n-2}$<br>而$f_1=2,f_2=3$<br>如果按<a href="https://en.wikipedia.org/wiki/Fibonacci_number" target="_blank" rel="noopener">Fibonacci数</a>的定义，就有$f_n=F_{n+2}$。</p>
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>给定一个排列$p$，要求有哪些集合使得A能赢是困难的，因为这和具体的排列有关。可以反过来，即给定$B$的集合$S$，求有多少种排列能让A赢，这个数只和$|S|$有关，因此容易处理。<br>下面先计算使A输的情况，因为这容易算。<br>假设$S$的大小为$k$，令$i=S_j$，其中$1\leq j \leq k$。那么$p_i$不能取$S$中的元素，只能从剩下的$n-k$个元素中选。这样的数量为$A_{n-k}^k$。剩下的$n-k$个$i$对应的$p_i$可以随便选，为$(n-k)!$，因此一个大小为$k$的集合让A输的排列有$A_{n-k}^k(n-k)!$种。再考虑到大小为$k$的集合有$C_{n}^k$个，最后对$k$求和，总数为：</p>
+<script type="math/tex; mode=display">
+\displaystyle\sum_{k=0}^n C_{n}^kA_{n-k}^k(n-k)!=n!\sum_{k=0}^nC_{n-k}^k</script><p>需要计算$\sum_{k=0}^nC_{n-k}^k\triangleq g(n)$，这实际上和Fibonacci数有关。下面证明。<br><a href="https://math.stackexchange.com/questions/81805/how-to-show-that-this-binomial-sum-satisfies-the-fibonacci-relation/169927#169927" target="_blank" rel="noopener">证明</a><br>考虑由0,1构成的n位字符串的数量，其中没有两个1相邻。</p>
+<h2 id="证明第一部分"><a href="#证明第一部分" class="headerlink" title="证明第一部分"></a>证明第一部分</h2><p>首先证明这是Fibonacci数。<br>用$f_{n}$表示$n$位的数量，$f_{n,0}$表示0结尾的答案，$f_{n,1}$表示1结尾的答案。<br>显然</p>
+<script type="math/tex; mode=display">
+f_{n,0}=f_{n-1}\\
+f_{n,1}=f_{n-1,0}</script><p>相加得：<br>$f_n=f_{n-1}+f_{n-1,0}=f_{n-1}+f_{n-2}$<br>而$f_1=2,f_2=3$<br>如果按<a href="https://en.wikipedia.org/wiki/Fibonacci_number" target="_blank" rel="noopener">Fibonacci数</a>的定义，就有$f_n=F_{n+2}$。</p>
 <h2 id="证明第二部分"><a href="#证明第二部分" class="headerlink" title="证明第二部分"></a>证明第二部分</h2><p>计算有$k$个1的串的数量：那么有$n-k$个0，算上两端有$n-k+1$个隔板，把$k$个1放入隔板中，有$C_{n-k+1}^k$中方法。枚举$k$，总数为$\sum_{k=0}^nC_{n-k+1}^k=g(n+1)$。<br>即$g(n)=F_{n+1}$<br>QED.</p>
 
-        </div>
+          
         
-        
-        
+      
     </div>
-</div>
 
-
-
-
-
-
-
-
-    <div class="card">
     
-    <div class="card-content article ">
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/24/Superior Substring/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
         
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-07-24T14:11:52.167Z">2019-07-24</time>
+        
+          <h1 class="post-title" itemprop="name headline">
                 
                 
-                <span class="level-item has-text-grey">
-                    
-                    
-                    4 minutes read (About 531 words)
-                </span>
+                <a href="/2019/07/24/Superior Substring/" class="post-title-link" itemprop="url">Superior Substring</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
                 
-                
-            </div>
+              
+
+              <time title="创建时间：2019-07-24 22:11:52 / 修改时间：22:28:04" itemprop="dateCreated datePublished" datetime="2019-07-24T22:11:52+08:00">2019-07-24</time>
+            </span>
+          
+
+          
+            
+
+            
+          
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          <br>
+          
+
+          
+
+          
+
         </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
         
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/07/24/Superior Substring/">Superior Substring</a>
-            
-        </h1>
-        <div class="content">
+          
             <p><a href="https://www.hackerearth.com/zh/practice/algorithms/searching/binary-search/practice-problems/algorithm/superior-substring-dec-circuits-e51b3c27/" target="_blank" rel="noopener">题目地址</a></p>
 <h1 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h1><p>核心问题是，给定一个长为$N$的01串，连续子串中1的数量大于等于子串长度一半（向下取整）的为合法串。问合法串的最大长度。</p>
-<h1 id="解法"><a href="#解法" class="headerlink" title="解法"></a>解法</h1><p>$N\leq 10^5$，因此需要$n\log n$的算法。<br>我原以为这个长度会满足单调性，即如果长的串满足，短的一定满足。其实不对。反例：<br>$10001$<br>整个串满足条件，但找不到长度为4的合法串。<br>下面给出官方题解。<br>用$f$表示累积和序列，那么原条件可表示为：<br>$$<br>f(R)-f(L-1)\geq \frac{R-L+1}{2} \quad(1)<br>$$<br>这个条件可以等价表示为<br>$$<br>f(R)-f(L-1)\geq \frac{R-L}{2.0} \quad(2)<br>$$<br><strong>证明</strong><br>(1)-&gt;(2)<br>因为$\frac{R-L+1}{2}\geq \frac{R-L}{2.0}$（可根据$R-L$的奇偶讨论）。<br>(2)-&gt;(1)<br>当$R-L$为偶数时，$\frac{R-L}{2.0}=\frac{R-L+1}{2}$。<br>当$R-L$为奇数时，因为$f(R)-f(L-1)$为整数，(2)实际上是$f(R)-f(L-1)\geq \frac{R-L}{2.0}+0.5$。<br>证毕。</p>
-<p>(2)可变为<br>$$<br>2f(R)-R\geq 2f(L-1)-L<br>$$<br>那么可形成两个这样的序列：<br>$$p(i)=2f(i)-i\<br>q(i)=2f(i-1)-i<br>$$<br>对于每个$R$，计算最小的满足$p(R)\geq q(L)$的$L$。<br>当然这里要用二分来计算$L$，否则就没有意义了。然而$q$并不是一个单调序列。<br>实际上不需要完整的$q$序列，因为如果$i&lt;j$，且$q(i)&lt;q(j)$的话，计算$L$时肯定不会选到$j$。因此只要从$i=1$开始，形成一个单调递减序列$q’$就行了。$q’[i].index=j$，$q’[i].value = q[j]$。<br>官方的程序用了一个比较聪明的做法，可以不用结构体。使用原序列的长度，如果下一个元素比现在的大，那么下一个元素变为与现在的一样大，那么在二分时会得到正确的结果。</p>
+<h1 id="解法"><a href="#解法" class="headerlink" title="解法"></a>解法</h1><p>$N\leq 10^5$，因此需要$n\log n$的算法。<br>我原以为这个长度会满足单调性，即如果长的串满足，短的一定满足。其实不对。反例：<br>$10001$<br>整个串满足条件，但找不到长度为4的合法串。<br>下面给出官方题解。<br>用$f$表示累积和序列，那么原条件可表示为：</p>
+<script type="math/tex; mode=display">
+f(R)-f(L-1)\geq \frac{R-L+1}{2} \quad(1)</script><p>这个条件可以等价表示为</p>
+<script type="math/tex; mode=display">
+f(R)-f(L-1)\geq \frac{R-L}{2.0} \quad(2)</script><p><strong>证明</strong><br>(1)-&gt;(2)<br>因为$\frac{R-L+1}{2}\geq \frac{R-L}{2.0}$（可根据$R-L$的奇偶讨论）。<br>(2)-&gt;(1)<br>当$R-L$为偶数时，$\frac{R-L}{2.0}=\frac{R-L+1}{2}$。<br>当$R-L$为奇数时，因为$f(R)-f(L-1)$为整数，(2)实际上是$f(R)-f(L-1)\geq \frac{R-L}{2.0}+0.5$。<br>证毕。</p>
+<p>(2)可变为</p>
+<script type="math/tex; mode=display">
+2f(R)-R\geq 2f(L-1)-L</script><p>那么可形成两个这样的序列：</p>
+<script type="math/tex; mode=display">p(i)=2f(i)-i\\
+q(i)=2f(i-1)-i</script><p>对于每个$R$，计算最小的满足$p(R)\geq q(L)$的$L$。<br>当然这里要用二分来计算$L$，否则就没有意义了。然而$q$并不是一个单调序列。<br>实际上不需要完整的$q$序列，因为如果$i&lt;j$，且$q(i)&lt;q(j)$的话，计算$L$时肯定不会选到$j$。因此只要从$i=1$开始，形成一个单调递减序列$q’$就行了。$q’[i].index=j$，$q’[i].value = q[j]$。<br>官方的程序用了一个比较聪明的做法，可以不用结构体。使用原序列的长度，如果下一个元素比现在的大，那么下一个元素变为与现在的一样大，那么在二分时会得到正确的结果。</p>
 
-        </div>
+          
         
-        
-        
+      
     </div>
-</div>
 
-
-
-
-
-
-
-
-</div>
-                
-
-
-
-
-<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left ">
     
-        
-<div class="card widget">
-    <div class="card-content">
-        <nav class="level">
-            <div class="level-item has-text-centered" style="flex-shrink: 1">
-                <div>
-                    
-                        <img class="image is-128x128 has-mb-6" src="/images/avatar.png" alt="Your name">
-                    
-                    
-                    <p class="is-size-4 is-block">
-                        Your name
-                    </p>
-                    
-                    
-                    <p class="is-size-6 is-block">
-                        Your title
-                    </p>
-                    
-                    
-                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
-                        <i class="fas fa-map-marker-alt has-mr-7"></i>
-                        <span>Your location</span>
-                    </p>
-                    
-                </div>
-            </div>
-        </nav>
-        <nav class="level is-mobile">
-            <div class="level-item has-text-centered is-marginless">
-                <div>
-                    <p class="heading">
-                        Entradas
-                    </p>
-                    <p class="title has-text-weight-normal">
-                        5
-                    </p>
-                </div>
-            </div>
-            <div class="level-item has-text-centered is-marginless">
-                <div>
-                    <p class="heading">
-                        Categorias
-                    </p>
-                    <p class="title has-text-weight-normal">
-                        0
-                    </p>
-                </div>
-            </div>
-            <div class="level-item has-text-centered is-marginless">
-                <div>
-                    <p class="heading">
-                        Etiquetas
-                    </p>
-                    <p class="title has-text-weight-normal">
-                        0
-                    </p>
-                </div>
-            </div>
-        </nav>
-        <div class="level">
-            <a class="level-item button is-link is-rounded" href="https://github.com/ppoffice" target="_blank">
-                SEGUIR</a>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+
+
+          </div>
+          
+
         </div>
         
-        
-        <div class="level is-mobile">
-            
-            <a class="level-item button is-white is-marginless" target="_blank" title="Github" href="https://github.com/ppoffice">
-                
-                <i class="fab fa-github"></i>
-                
-            </a>
-            
-            <a class="level-item button is-white is-marginless" target="_blank" title="Facebook" href="https://facebook.com">
-                
-                <i class="fab fa-facebook"></i>
-                
-            </a>
-            
-            <a class="level-item button is-white is-marginless" target="_blank" title="Twitter" href="https://twitter.com">
-                
-                <i class="fab fa-twitter"></i>
-                
-            </a>
-            
-            <a class="level-item button is-white is-marginless" target="_blank" title="Dribbble" href="https://dribbble.com">
-                
-                <i class="fab fa-dribbble"></i>
-                
-            </a>
-            
-            <a class="level-item button is-white is-marginless" target="_blank" title="RSS" href="/">
-                
-                <i class="fas fa-rss"></i>
-                
-            </a>
-            
-        </div>
-        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
     </div>
-</div>
-    
-        
-    
-        
+  </div>
 
-<div class="card widget">
-    <div class="card-content">
-        <div class="menu">
-        <h3 class="menu-label">
-            Links
-        </h3>
-        <ul class="menu-list">
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  
+  <p class="site-author-name" itemprop="name">John Doe</p>
+  <div class="site-description motion-element" itemprop="description"></div>
+</div>
+
+
+  <nav class="site-state motion-element">
+    
+      <div class="site-state-item site-state-posts">
         
-            <li>
-                <a class="level is-mobile" href="https://hexo.io" target="_blank">
-                    <span class="level-left">
-                        <span class="level-item">Hexo</span>
-                    </span>
-                    <span class="level-right">
-                        <span class="level-item tag">hexo.io</span>
-                    </span>
-                </a>
-            </li>
+          <a href="/archives/">
         
-            <li>
-                <a class="level is-mobile" href="https://github.com/ppoffice" target="_blank">
-                    <span class="level-left">
-                        <span class="level-item">PPOffice</span>
-                    </span>
-                    <span class="level-right">
-                        <span class="level-item tag">github.com</span>
-                    </span>
-                </a>
-            </li>
-        
-        </ul>
+          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+
+    
+
+    
+  </nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+          
         </div>
+      </div>
+
+      
+
+      
+
     </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+
+  
+
+  
 </div>
 
 
-    
-        
-<div class="card widget">
-    <div class="card-content">
-        <div class="menu">
-            <h3 class="menu-label">
-                Categorias
-            </h3>
-            <ul class="menu-list">
-            
-            </ul>
-        </div>
-    </div>
-</div>
-    
-        
-    
-    
-        <div class="column-right-shadow is-hidden-widescreen ">
-        
-            
-<div class="card widget">
-    <div class="card-content">
-        <h3 class="menu-label">
-            Recientes
-        </h3>
-        
-        <article class="media">
-            
-            <a href="/2019/07/24/EM算法/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="EM算法">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-24T14:36:35.961Z">2019-07-24</time></div>
-                    <a href="/2019/07/24/EM算法/" class="has-link-black-ter is-size-6">EM算法</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/07/24/Yet Again a Subarray Problem/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Yet Again a Subarray Problem">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-24T14:31:35.771Z">2019-07-24</time></div>
-                    <a href="/2019/07/24/Yet Again a Subarray Problem/" class="has-link-black-ter is-size-6">Yet Again a Subarray Problem</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/07/24/最长上升子序列(LIS)的nlogn算法/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="最长上升子序列(LIS)的nlogn算法">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-24T14:21:29.056Z">2019-07-24</time></div>
-                    <a href="/2019/07/24/最长上升子序列(LIS)的nlogn算法/" class="has-link-black-ter is-size-6">最长上升子序列(LIS)的nlogn算法</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/07/24/Biject Inside/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Biject Inside">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-24T14:19:15.208Z">2019-07-24</time></div>
-                    <a href="/2019/07/24/Biject Inside/" class="has-link-black-ter is-size-6">Biject Inside</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/07/24/Superior Substring/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Superior Substring">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-24T14:11:52.167Z">2019-07-24</time></div>
-                    <a href="/2019/07/24/Superior Substring/" class="has-link-black-ter is-size-6">Superior Substring</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-    </div>
-</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
 
-        
-            <div class="card widget">
-    <div class="card-content">
-        <div class="menu">
-        <h3 class="menu-label">
-            Archivos
-        </h3>
-        <ul class="menu-list">
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2019/07/">
-                <span class="level-start">
-                    <span class="level-item">July 2019</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">5</span>
-                </span>
-            </a>
-        </li>
-        
-        </ul>
-        </div>
-    </div>
-</div>
-        
-            <div class="card widget">
-    <div class="card-content">
-        <div class="menu">
-            <h3 class="menu-label">
-                Etiquetas
-            </h3>
-            <div class="field is-grouped is-grouped-multiline">
-                
-            </div>
-        </div>
-    </div>
-</div>
-        
-        </div>
-    
-</div>
 
-                
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.2.0</div>
 
 
 
 
-<div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right ">
-    
         
-<div class="card widget">
-    <div class="card-content">
-        <h3 class="menu-label">
-            Recientes
-        </h3>
-        
-        <article class="media">
-            
-            <a href="/2019/07/24/EM算法/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="EM算法">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-24T14:36:35.961Z">2019-07-24</time></div>
-                    <a href="/2019/07/24/EM算法/" class="has-link-black-ter is-size-6">EM算法</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/07/24/Yet Again a Subarray Problem/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Yet Again a Subarray Problem">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-24T14:31:35.771Z">2019-07-24</time></div>
-                    <a href="/2019/07/24/Yet Again a Subarray Problem/" class="has-link-black-ter is-size-6">Yet Again a Subarray Problem</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/07/24/最长上升子序列(LIS)的nlogn算法/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="最长上升子序列(LIS)的nlogn算法">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-24T14:21:29.056Z">2019-07-24</time></div>
-                    <a href="/2019/07/24/最长上升子序列(LIS)的nlogn算法/" class="has-link-black-ter is-size-6">最长上升子序列(LIS)的nlogn算法</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/07/24/Biject Inside/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Biject Inside">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-24T14:19:15.208Z">2019-07-24</time></div>
-                    <a href="/2019/07/24/Biject Inside/" class="has-link-black-ter is-size-6">Biject Inside</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/07/24/Superior Substring/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Superior Substring">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-24T14:11:52.167Z">2019-07-24</time></div>
-                    <a href="/2019/07/24/Superior Substring/" class="has-link-black-ter is-size-6">Superior Substring</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-    </div>
-</div>
-
-    
-        <div class="card widget">
-    <div class="card-content">
-        <div class="menu">
-        <h3 class="menu-label">
-            Archivos
-        </h3>
-        <ul class="menu-list">
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2019/07/">
-                <span class="level-start">
-                    <span class="level-item">July 2019</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">5</span>
-                </span>
-            </a>
-        </li>
-        
-        </ul>
-        </div>
-    </div>
-</div>
-    
-        <div class="card widget">
-    <div class="card-content">
-        <div class="menu">
-            <h3 class="menu-label">
-                Etiquetas
-            </h3>
-            <div class="field is-grouped is-grouped-multiline">
-                
-            </div>
-        </div>
-    </div>
-</div>
-    
-    
-</div>
-
-            </div>
-        </div>
-    </section>
-    <footer class="footer">
-    <div class="container">
-        <div class="level">
-            <div class="level-start has-text-centered-mobile">
-                <a class="footer-logo is-block has-mb-6" href="/">
-                
-                    <img src="/images/logo.svg" alt="Hexo" height="28">
-                
-                </a>
-                <p class="is-size-7">
-                &copy; 2019 John Doe&nbsp;
-                Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
-                
-                </p>
-            </div>
-            <div class="level-end">
-            
-                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
-                
-                
-                <p class="control">
-                    <a class="button is-white is-large" target="_blank" title="Creative Commons" href="https://creativecommons.org/">
-                        
-                        <i class="fab fa-creative-commons"></i>
-                        
-                    </a>
-                </p>
-                
-                <p class="control">
-                    <a class="button is-white is-large" target="_blank" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/">
-                        
-                        <i class="fab fa-creative-commons-by"></i>
-                        
-                    </a>
-                </p>
-                
-                <p class="control">
-                    <a class="button is-white is-large" target="_blank" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus">
-                        
-                        <i class="fab fa-github"></i>
-                        
-                    </a>
-                </p>
-                
-                </div>
-            
-            </div>
-        </div>
-    </div>
-</footer>
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
-<script>moment.locale("en");</script>
 
 
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
     
-    
-    
-    <script src="/js/animation.js"></script>
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
     
 
     
-    
-    
-    <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
-    <script src="/js/gallery.js" defer></script>
+
     
 
     
-    
 
-<div id="outdated">
-    <h6>Your browser is out-of-date!</h6>
-    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
-            my browser now </a></p>
-    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
-</div>
-<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+  </div>
+
+  
+
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        outdatedBrowser({
-            bgColor: '#f25648',
-            color: '#ffffff',
-            lowerThan: 'flex'
-        });
-    });
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
 </script>
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=3.4.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+
+
+  <script src="/js/utils.js?v=7.2.0"></script>
+
+  <script src="/js/motion.js?v=7.2.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/schemes/muse.js?v=7.2.0"></script>
+
+
+
+  
+
+  <script src="/js/next-boot.js?v=7.2.0"></script>
+
+  
+
+  
+
+  
+
+
+  
+  
+
+  
+  
     
+      
     
-<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-    MathJax.Hub.Config({
-        'HTML-CSS': {
-            matchFontHeight: false
-        },
-        SVG: {
-            matchFontHeight: false
-        },
-        CommonHTML: {
-            matchFontHeight: false
-        },
-        tex2jax: {
-            inlineMath: [
-                ['$','$'],
-                ['\\(','\\)']
-            ]
+      
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+  
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') {
+          next = next.nextSibling;
         }
+        if (next && next.nodeName.toLowerCase() === 'br') {
+          next.parentNode.removeChild(next);
+        }
+      }
     });
-});
+  });
+
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
+      if (element.nodeName.toLowerCase() == 'li') {
+        element = element.parentNode;
+      }
+      element.classList.add('has-jax');
+    }
+  });
 </script>
+<script src="//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
     
-    
-
-<a id="back-to-top" title="Back to Top" href="javascript:;">
-    <i class="fas fa-chevron-up"></i>
-</a>
-<script src="/js/back-to-top.js" defer></script>
+  
 
 
-    
-    
-
-    
-    
-    
-    
-
-    
-    
-    
-    
-    
-    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
-    <script src="/js/clipboard.js" defer></script>
-    
-
-    
-    
-    
 
 
-<script src="/js/main.js" defer></script>
 
-    
-    <div class="searchbox ins-search">
-    <div class="searchbox-container ins-search-container">
-        <div class="searchbox-input-wrapper">
-            <input type="text" class="searchbox-input ins-search-input" placeholder="Type something...">
-            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
-        </div>
-        <div class="searchbox-result-wrapper ins-section-wrapper">
-            <div class="ins-section-container"></div>
-        </div>
-    </div>
-</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <script>
-    (function (window) {
-        var INSIGHT_CONFIG = {
-            TRANSLATION: {
-                POSTS: 'Entradas',
-                PAGES: 'Pages',
-                CATEGORIES: 'Categorias',
-                TAGS: 'Etiquetas',
-                UNTITLED: '(Untitled)',
-            },
-            CONTENT_URL: '/content.json',
-        };
-        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
-    })(window);
+// GET RESPONSIVE HEIGHT PASSED FROM IFRAME
+
+window.addEventListener("message", function(e) {
+  var data = e.data;
+  if ((typeof data === 'string') && (data.indexOf('ciu_embed') > -1)) {
+    var featureID = data.split(':')[1];
+    var height = data.split(':')[2];
+    $(`iframe[data-feature=${featureID}]`).height(parseInt(height) + 30);
+  }
+}, false);
 </script>
-<script src="/js/insight.js" defer></script>
-<link rel="stylesheet" href="/css/search.css">
-<link rel="stylesheet" href="/css/insight.css">
-    
+
+
+
+
+
+
+
+
+  
+
 </body>
 </html>
