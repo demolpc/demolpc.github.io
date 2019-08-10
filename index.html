@@ -14,7 +14,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="zh-CN">
+<html class="theme-next gemini use-motion" lang="zh-CN">
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -68,7 +68,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Gemini',
     version: '7.2.0',
     sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
     back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
@@ -222,6 +222,22 @@
         
         
           
+          <li class="menu-item menu-item-tags">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
           <li class="menu-item menu-item-categories">
 
     
@@ -257,9 +273,6 @@
   
 
   
-    
-
-  
 
   
 </nav>
@@ -275,6 +288,9 @@
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
+          
+            
+
           
           <div id="content" class="content">
             
@@ -295,7 +311,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/09/test/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/10/Hough变换/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="demolpc">
@@ -315,7 +331,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/08/09/test/" class="post-title-link" itemprop="url">test</a>
+                <a href="/2019/08/10/Hough变换/" class="post-title-link" itemprop="url">Hough变换</a>
               
             
           </h1>
@@ -340,7 +356,7 @@
                 
               
 
-              <time title="创建时间：2019-08-09 22:21:40" itemprop="dateCreated datePublished" datetime="2019-08-09T22:21:40+08:00">2019-08-09</time>
+              <time title="创建时间：2019-08-10 10:05:48 / 修改时间：10:12:37" itemprop="dateCreated datePublished" datetime="2019-08-10T10:05:48+08:00">2019-08-10</time>
             </span>
           
 
@@ -348,18 +364,23 @@
             
 
             
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-08-10 09:31:23" itemprop="dateModified" datetime="2019-08-10T09:31:23+08:00">2019-08-10</time>
-              </span>
-            
           
 
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/计算机视觉/" itemprop="url" rel="index"><span itemprop="name">计算机视觉</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -396,9 +417,196 @@
       
         
           
-            <p><img src="images/bd_logo1.png" alt></p>
+            <p>
+              检测直线给定二值图像中的$n$个点，要找到图像中的直线。一种方法是枚举所有可能的$n*(n-1)/2$条直线，然后检测每个点是否足够靠近线。如果足够靠近，就给这条线投一票。最后票数多的直线很可能是真正的直线。这样的复杂度是$n^3$的，对于一般的图片大小并不实用。
+参数空间方法Hough变换的思想最
+              ...
+            </p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/08/10/Hough变换/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/10/Iterative Closest Point/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="demolpc">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="demolpc的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/08/10/Iterative Closest Point/" class="post-title-link" itemprop="url">Iterative Closest Point</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
 
           
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-08-10 09:56:10 / 修改时间：09:59:24" itemprop="dateCreated datePublished" datetime="2019-08-10T09:56:10+08:00">2019-08-10</time>
+            </span>
+          
+
+          
+            
+
+            
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/SLAM/" itemprop="url" rel="index"><span itemprop="name">SLAM</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          <br>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>
+              问题：要把三维空间中的点集$\{p_1,p_2,\cdots,p_n\}$通过旋转、平移和点集$\{q_1,q_2,\cdots,q_n\}$匹配起来。$p$可能是预先给定的模型，而$q$是在另一个坐标系中观察的结果，匹配就是要找到两个坐标系的转换关系。
+给定对应关系的情况先考虑简单的情形，即给定了
+              ...
+            </p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/08/10/Iterative Closest Point/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -571,43 +779,19 @@
       
         
           
-            <p>EM算法就是含有隐变量的概率模型参数的极大似然估计法（或极大后验概率估计法）<br>用$x$表示观测变量（的数据），$z$表示隐变量，$\theta$表示需要估计的模型参数。<br>给定观测数据$x$，其似然函数为$p(x|\theta)$，对数似然函数$L(\theta) \triangleq \ln p(x|\theta)$。<br>极大似然估计：</p>
-<script type="math/tex; mode=display">
-\max_{\theta}L(\theta)</script><h1 id="EM算法"><a href="#EM算法" class="headerlink" title="EM算法"></a>EM算法</h1><p>算法是迭代进行的，假设第$n$轮迭代得到的参数估计为$\theta_n$，希望下一轮迭代使得$L(\theta)&gt;L(\theta_n)$</p>
-<script type="math/tex; mode=display">
-\begin{aligned}
-L(\theta)-L(\theta_n) &=\ln \left(\sum_zp(z,x|\theta)\right)-\ln p(x|\theta_n)\\
-\end{aligned}</script><p>对数函数是凹函数，满足Jensen不等式：</p>
-<script type="math/tex; mode=display">
-\log \left(\sum_j\lambda_jy_j\right)\geq \sum_j \lambda_j\log y_j</script><p>其中$\lambda_j\geq 0, \sum_j\lambda_j=1$<br>那么</p>
-<script type="math/tex; mode=display">
-\begin{aligned}
-L(\theta)-L(\theta_n) &=\ln \left(\sum_zp(z|x,\theta_n)\frac{p(z,x|\theta)}{p(z|x,\theta_n)}\right)-\ln p(x|\theta_n)\\
-&\geq \sum_zp(z|x,\theta_n)\ln\frac{p(z,x|\theta)}{p(z|x,\theta_n)}-\ln p(x|\theta_n)\\
-&=\sum_zp(z|x,\theta_n)\ln\frac{p(z,x|\theta)}{p(z|x,\theta_n)}-\left(\sum_zp(z|x,\theta_n)\right)\ln p(x|\theta_n)\\
-&=\sum_zp(z|x,\theta_n)\ln\frac{p(z,x|\theta)}{p(z,x|\theta_n)}
-\end{aligned}</script><p>即：</p>
-<script type="math/tex; mode=display">
-\begin{aligned}
-L(\theta)&\geq L(\theta_n)+\sum_zp(z|x,\theta_n)\ln\frac{p(z,x|\theta)}{p(z,x|\theta_n)}\\
-&\triangleq B(\theta,\theta_n)
-\end{aligned}</script><p>也就是$B(\theta,\theta_n)$是$L(\theta)$的一个下界函数。而且容易看到：</p>
-<script type="math/tex; mode=display">
-B(\theta_n,\theta_n) = L(\theta_n)</script><p>即自变量等于$\theta_n$时，两个函数值是相等的。<br>那么如果找一个$\theta_{n+1}$，使得$B(\theta_{n+1},\theta_n)\geq B(\theta_n,\theta_n)$，那么</p>
-<script type="math/tex; mode=display">
-\begin{aligned}
-L(\theta_{n+1})&\geq B(\theta_{n+1},\theta_n)\\
-&\geq B(\theta_n,\theta_n)\\
-&=L(\theta_n)
-\end{aligned}</script><p>一种方法是使：</p>
-<script type="math/tex; mode=display">
-\theta_{n+1}=\operatorname{argmax} B(\theta,\theta_n)</script><p>但是注意这样并不能保证$L(\theta)$的增长也能极大化，这和$L(\theta)$的具体形状有关。<br>容易看出，使$B(\theta,\theta_n)$极大化，等价于极大化下面的式子</p>
-<script type="math/tex; mode=display">
-Q(\theta,\theta_n)\triangleq \sum_zp(z|x,\theta_n)\ln p(z,x|\theta)</script><p>这个式子有着鲜明的含义：<br>当有了$x,\theta$，根据$z$的概率分布$p(z|x,\theta_n)$可以采样出$z$，这样就有了完整的数据，可以做平常的极大似然估计。<br>因此EM算法的步骤是：<br>E步：求完整数据对数似然的期望，这个期望是在概率分布$p(z|x,\theta_n)$下求的。<br>M步：极大化，只是保证$L(\theta)$增大的一种方式。</p>
-<p>在E步中，$\ln p(x,z|\theta)$应该是很好算的，$p(z|x,\theta)$也好算：</p>
-<script type="math/tex; mode=display">
-p(z|x,\theta)=\frac{p(z,x|\theta)}{p(x|\theta)}=\frac{p(z,x|\theta)}{\sum_{z'}p(z',x|\theta)}</script>
+            <p>
+              EM算法就是含有隐变量的概率模型参数的极大似然估计法（或极大后验概率估计法）用$x$表示观测变量（的数据），$z$表示隐变量，$\theta$表示需要估计的模型参数。给定观测数据$x$，其似然函数为$p(x|\theta)$，对数似然函数$L(\theta) \triangleq \ln p(x|\
+              ...
+            </p>
+          <!--noindex-->
           
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/07/24/EM算法/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -780,12 +964,21 @@ p(z|x,\theta)=\frac{p(z,x|\theta)}{p(x|\theta)}=\frac{p(z,x|\theta)}{\sum_{z'}p(
       
         
           
-            <p><a href="https://www.codechef.com/problems/SUBPRNJL" target="_blank" rel="noopener">题目</a></p>
-<h1 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h1><p>给定一个数组$A$，长度$N&lt;2000$，$A_i&lt;2000$。对于它的每个连续子序列，计算这个子序列中第$K$小的数（$K$随子序列而不同，这不是问题重点），记为$x$，得到$x$在子序列中出现的次数$F$。如果$F$在子序列中也出现过，那么答案加一，求总的答案。</p>
-<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><h2 id="解法一-线段树"><a href="#解法一-线段树" class="headerlink" title="解法一 线段树"></a>解法一 线段树</h2><p>对于左端点下标为$i$的子序列，在递增右端点的过程中，可以连续处理。线段树中节点保存的是值在$[l,r]$之间的数在当前子序列中出现的次数，而不是序列中的下标。那么根据左子节点中保存的数和$K$的关系，很容易找到第$K$小的数对应的叶节点，也就得到$F$。然后再看$F$对应的叶节点中保存的出现次数是否为0即可。</p>
-<h2 id="解法二-预处理-二分"><a href="#解法二-预处理-二分" class="headerlink" title="解法二 预处理+二分"></a>解法二 预处理+二分</h2><p>首先预处理得到<code>PRE[x][r]</code>，表示$[1,r]$子序列中$\leq x$的数的个数。预处理后可以$O(1)$计算$[l,r]$子序列中$\leq x$的数的个数。二分$x$就可得到第$K$小的数。根据<code>PRE[x][r]</code>也可以$O(1)$得到$[l,r]$子序列中等于$x$的数的个数，因此问题解决。</p>
-
+            <p>
+              题目
+题意给定一个数组$A$，长度$N&lt;2000$，$A_i&lt;2000$。对于它的每个连续子序列，计算这个子序列中第$K$小的数（$K$随子序列而不同，这不是问题重点），记为$x$，得到$x$在子序列中出现的次数$F$。如果$F$在子序列中也出现过，那么答案加一，求总的答案。
+题解解法一
+              ...
+            </p>
+          <!--noindex-->
           
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/07/24/Yet Again a Subarray Problem/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -958,12 +1151,21 @@ p(z|x,\theta)=\frac{p(z,x|\theta)}{p(x|\theta)}=\frac{p(z,x|\theta)}{\sum_{z'}p(
       
         
           
-            <p>序列用$A$表示，处理到当前元素为止，长度为$i$的子序列的最小的结尾元素用$B_i$表示。序列$B$是单调增的，即</p>
-<script type="math/tex; mode=display">
-B_i<B_j \quad \text{if}\quad i<j</script><p>因为如果$B_i\geq B_j$，那么$B_j$对应的子序列中的第$i$个数是小于$B_i$的，这与$B_i$是最小的矛盾。<br>假设当前LIS长度为$L$，现在要计算以$A_k$结尾的LIS，只需二分长度$l$，看是否满足$B_l<a_k$。假设以$a_k$结尾的lis长度为$m$，再进行一次更新： <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">B[m] = min(B[m], A[k]);</span><br><span class="line">L = max(L, m);</span><br></pre></td></tr></table></a_k$。假设以$a_k$结尾的lis长度为$m$，再进行一次更新：></p>
-<p>即可。</p>
+            <p>
+              序列用$A$表示，处理到当前元素为止，长度为$i$的子序列的最小的结尾元素用$B_i$表示。序列$B$是单调增的，即
 
+B_i因为如果$B_i\geq B_j$，那么$B_j$对应的子序列中的第$i$个数是小于$B_i$的，这与$B_i$是最小的矛盾。假设当前LIS长度为$L$，现在要计算以$A_k
+              ...
+            </p>
+          <!--noindex-->
           
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/07/24/最长上升子序列(LIS)的nlogn算法/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -1136,18 +1338,21 @@ B_i<B_j \quad \text{if}\quad i<j</script><p>因为如果$B_i\geq B_j$，那么$B
       
         
           
-            <p><a href="https://www.hackerearth.com/zh/problem/algorithm/biject-outside-aa04dd45/description/" target="_blank" rel="noopener">题目地址</a><br>又是想了很久也没做出来，写下官方题解吧。</p>
-<h1 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h1><p>A随机选择1 ~ n的一个排列$p$，B随机选择1 ~ n的一个子集$S$，如果存在$1\leq i \leq n$，使得$i,p_i$都在$S$中，A就赢了。问A赢的概率。</p>
-<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>给定一个排列$p$，要求有哪些集合使得A能赢是困难的，因为这和具体的排列有关。可以反过来，即给定$B$的集合$S$，求有多少种排列能让A赢，这个数只和$|S|$有关，因此容易处理。<br>下面先计算使A输的情况，因为这容易算。<br>假设$S$的大小为$k$，令$i=S_j$，其中$1\leq j \leq k$。那么$p_i$不能取$S$中的元素，只能从剩下的$n-k$个元素中选。这样的数量为$A_{n-k}^k$。剩下的$n-k$个$i$对应的$p_i$可以随便选，为$(n-k)!$，因此一个大小为$k$的集合让A输的排列有$A_{n-k}^k(n-k)!$种。再考虑到大小为$k$的集合有$C_{n}^k$个，最后对$k$求和，总数为：</p>
-<script type="math/tex; mode=display">
-\displaystyle\sum_{k=0}^n C_{n}^kA_{n-k}^k(n-k)!=n!\sum_{k=0}^nC_{n-k}^k</script><p>需要计算$\sum_{k=0}^nC_{n-k}^k\triangleq g(n)$，这实际上和Fibonacci数有关。下面证明。<br><a href="https://math.stackexchange.com/questions/81805/how-to-show-that-this-binomial-sum-satisfies-the-fibonacci-relation/169927#169927" target="_blank" rel="noopener">证明</a><br>考虑由0,1构成的n位字符串的数量，其中没有两个1相邻。</p>
-<h2 id="证明第一部分"><a href="#证明第一部分" class="headerlink" title="证明第一部分"></a>证明第一部分</h2><p>首先证明这是Fibonacci数。<br>用$f_{n}$表示$n$位的数量，$f_{n,0}$表示0结尾的答案，$f_{n,1}$表示1结尾的答案。<br>显然</p>
-<script type="math/tex; mode=display">
-f_{n,0}=f_{n-1}\\
-f_{n,1}=f_{n-1,0}</script><p>相加得：<br>$f_n=f_{n-1}+f_{n-1,0}=f_{n-1}+f_{n-2}$<br>而$f_1=2,f_2=3$<br>如果按<a href="https://en.wikipedia.org/wiki/Fibonacci_number" target="_blank" rel="noopener">Fibonacci数</a>的定义，就有$f_n=F_{n+2}$。</p>
-<h2 id="证明第二部分"><a href="#证明第二部分" class="headerlink" title="证明第二部分"></a>证明第二部分</h2><p>计算有$k$个1的串的数量：那么有$n-k$个0，算上两端有$n-k+1$个隔板，把$k$个1放入隔板中，有$C_{n-k+1}^k$中方法。枚举$k$，总数为$\sum_{k=0}^nC_{n-k+1}^k=g(n+1)$。<br>即$g(n)=F_{n+1}$<br>QED.</p>
-
+            <p>
+              题目地址又是想了很久也没做出来，写下官方题解吧。
+题意A随机选择1 ~ n的一个排列$p$，B随机选择1 ~ n的一个子集$S$，如果存在$1\leq i \leq n$，使得$i,p_i$都在$S$中，A就赢了。问A赢的概率。
+题解给定一个排列$p$，要求有哪些集合使得A能赢是困难的，因为这和具体
+              ...
+            </p>
+          <!--noindex-->
           
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/07/24/Biject Inside/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -1320,20 +1525,21 @@ f_{n,1}=f_{n-1,0}</script><p>相加得：<br>$f_n=f_{n-1}+f_{n-1,0}=f_{n-1}+f_{n
       
         
           
-            <p><a href="https://www.hackerearth.com/zh/practice/algorithms/searching/binary-search/practice-problems/algorithm/superior-substring-dec-circuits-e51b3c27/" target="_blank" rel="noopener">题目地址</a></p>
-<h1 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h1><p>核心问题是，给定一个长为$N$的01串，连续子串中1的数量大于等于子串长度一半（向下取整）的为合法串。问合法串的最大长度。</p>
-<h1 id="解法"><a href="#解法" class="headerlink" title="解法"></a>解法</h1><p>$N\leq 10^5$，因此需要$n\log n$的算法。<br>我原以为这个长度会满足单调性，即如果长的串满足，短的一定满足。其实不对。反例：<br>$10001$<br>整个串满足条件，但找不到长度为4的合法串。<br>下面给出官方题解。<br>用$f$表示累积和序列，那么原条件可表示为：</p>
-<script type="math/tex; mode=display">
-f(R)-f(L-1)\geq \frac{R-L+1}{2} \quad(1)</script><p>这个条件可以等价表示为</p>
-<script type="math/tex; mode=display">
-f(R)-f(L-1)\geq \frac{R-L}{2.0} \quad(2)</script><p><strong>证明</strong><br>(1)-&gt;(2)<br>因为$\frac{R-L+1}{2}\geq \frac{R-L}{2.0}$（可根据$R-L$的奇偶讨论）。<br>(2)-&gt;(1)<br>当$R-L$为偶数时，$\frac{R-L}{2.0}=\frac{R-L+1}{2}$。<br>当$R-L$为奇数时，因为$f(R)-f(L-1)$为整数，(2)实际上是$f(R)-f(L-1)\geq \frac{R-L}{2.0}+0.5$。<br>证毕。</p>
-<p>(2)可变为</p>
-<script type="math/tex; mode=display">
-2f(R)-R\geq 2f(L-1)-L</script><p>那么可形成两个这样的序列：</p>
-<script type="math/tex; mode=display">p(i)=2f(i)-i\\
-q(i)=2f(i-1)-i</script><p>对于每个$R$，计算最小的满足$p(R)\geq q(L)$的$L$。<br>当然这里要用二分来计算$L$，否则就没有意义了。然而$q$并不是一个单调序列。<br>实际上不需要完整的$q$序列，因为如果$i&lt;j$，且$q(i)&lt;q(j)$的话，计算$L$时肯定不会选到$j$。因此只要从$i=1$开始，形成一个单调递减序列$q’$就行了。$q’[i].index=j$，$q’[i].value = q[j]$。<br>官方的程序用了一个比较聪明的做法，可以不用结构体。使用原序列的长度，如果下一个元素比现在的大，那么下一个元素变为与现在的一样大，那么在二分时会得到正确的结果。</p>
-
+            <p>
+              题目地址
+题意核心问题是，给定一个长为$N$的01串，连续子串中1的数量大于等于子串长度一半（向下取整）的为合法串。问合法串的最大长度。
+解法$N\leq 10^5$，因此需要$n\log n$的算法。我原以为这个长度会满足单调性，即如果长的串满足，短的一定满足。其实不对。反例：$10001$整个串
+              ...
+            </p>
+          <!--noindex-->
           
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/07/24/Superior Substring/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -1418,7 +1624,7 @@ q(i)=2f(i-1)-i</script><p>对于每个$R$，计算最小的满足$p(R)\geq q(L)$
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-count">7</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1441,12 +1647,33 @@ q(i)=2f(i-1)-i</script><p>对于每个$R$，计算最小的满足$p(R)\geq q(L)$
         
           
         
-        <span class="site-state-item-count">3</span>
+          
+        
+          
+        
+        <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">分类</span>
         </a>
       </div>
     
 
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        
+        
+          
+        
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span>
+        </a>
+      </div>
     
   </nav>
 
@@ -1502,7 +1729,7 @@ q(i)=2f(i-1)-i</script><p>对于每个$R$，计算最小的满足$p(R)\geq q(L)$
 
 
 
-  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.2.0</div>
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.2.0</div>
 
 
 
@@ -1591,7 +1818,10 @@ q(i)=2f(i-1)-i</script><p>对于每个$R$，计算最小的满足$p(R)\geq q(L)$
   
 
 
-  <script src="/js/schemes/muse.js?v=7.2.0"></script>
+  <script src="/js/affix.js?v=7.2.0"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.2.0"></script>
+
 
 
 
@@ -1611,6 +1841,8 @@ q(i)=2f(i-1)-i</script><p>对于每个$R$，计算最小的满足$p(R)\geq q(L)$
 
   
   
+    
+      
     
       
     
