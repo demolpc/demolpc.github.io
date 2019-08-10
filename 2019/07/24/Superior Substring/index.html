@@ -94,17 +94,17 @@
   };
 </script>
 
-  <meta name="description" content="题目地址 题意核心问题是，给定一个长为$N$的01串，连续子串中1的数量大于等于子串长度一半（向下取整）的为合法串。问合法串的最大长度。 解法$N\leq 10^5$，因此需要$n\log n$的算法。我原以为这个长度会满足单调性，即如果长的串满足，短的一定满足。其实不对。反例：$10001$整个串满足条件，但找不到长度为4的合法串。下面给出官方题解。用$f$表示累积和序列，那么原条件可表示为：">
+  <meta name="description" content="题目地址 题意核心问题是，给定一个长为$N$的01串，连续子串中1的数量大于等于子串长度一半（向下取整）的为合法串。问合法串的最大长度。 解法$N\leq 10^5$，因此需要$n\log n$的算法。我原以为这个长度会满足单调性，即如果长的串满足，短的一定满足。其实不对。比如10001，整个串满足条件，但找不到长度为4的合法串。下面给出官方题解。用$f$表示累积和序列，那么对于$[L,R]$这个">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Superior Substring">
 <meta property="og:url" content="http://yoursite.com/2019/07/24/Superior Substring/index.html">
 <meta property="og:site_name" content="demolpc的博客">
-<meta property="og:description" content="题目地址 题意核心问题是，给定一个长为$N$的01串，连续子串中1的数量大于等于子串长度一半（向下取整）的为合法串。问合法串的最大长度。 解法$N\leq 10^5$，因此需要$n\log n$的算法。我原以为这个长度会满足单调性，即如果长的串满足，短的一定满足。其实不对。反例：$10001$整个串满足条件，但找不到长度为4的合法串。下面给出官方题解。用$f$表示累积和序列，那么原条件可表示为：">
+<meta property="og:description" content="题目地址 题意核心问题是，给定一个长为$N$的01串，连续子串中1的数量大于等于子串长度一半（向下取整）的为合法串。问合法串的最大长度。 解法$N\leq 10^5$，因此需要$n\log n$的算法。我原以为这个长度会满足单调性，即如果长的串满足，短的一定满足。其实不对。比如10001，整个串满足条件，但找不到长度为4的合法串。下面给出官方题解。用$f$表示累积和序列，那么对于$[L,R]$这个">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-06T14:27:50.792Z">
+<meta property="og:updated_time" content="2019-08-10T03:39:31.011Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Superior Substring">
-<meta name="twitter:description" content="题目地址 题意核心问题是，给定一个长为$N$的01串，连续子串中1的数量大于等于子串长度一半（向下取整）的为合法串。问合法串的最大长度。 解法$N\leq 10^5$，因此需要$n\log n$的算法。我原以为这个长度会满足单调性，即如果长的串满足，短的一定满足。其实不对。反例：$10001$整个串满足条件，但找不到长度为4的合法串。下面给出官方题解。用$f$表示累积和序列，那么原条件可表示为：">
+<meta name="twitter:description" content="题目地址 题意核心问题是，给定一个长为$N$的01串，连续子串中1的数量大于等于子串长度一半（向下取整）的为合法串。问合法串的最大长度。 解法$N\leq 10^5$，因此需要$n\log n$的算法。我原以为这个长度会满足单调性，即如果长的串满足，短的一定满足。其实不对。比如10001，整个串满足条件，但找不到长度为4的合法串。下面给出官方题解。用$f$表示累积和序列，那么对于$[L,R]$这个">
 
 
 
@@ -372,7 +372,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-08-06 22:27:50" itemprop="dateModified" datetime="2019-08-06T22:27:50+08:00">2019-08-06</time>
+                <time title="修改时间：2019-08-10 11:39:31" itemprop="dateModified" datetime="2019-08-10T11:39:31+08:00">2019-08-10</time>
               </span>
             
           
@@ -428,16 +428,17 @@
       
         <p><a href="https://www.hackerearth.com/zh/practice/algorithms/searching/binary-search/practice-problems/algorithm/superior-substring-dec-circuits-e51b3c27/" target="_blank" rel="noopener">题目地址</a></p>
 <h1 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h1><p>核心问题是，给定一个长为$N$的01串，连续子串中1的数量大于等于子串长度一半（向下取整）的为合法串。问合法串的最大长度。</p>
-<h1 id="解法"><a href="#解法" class="headerlink" title="解法"></a>解法</h1><p>$N\leq 10^5$，因此需要$n\log n$的算法。<br>我原以为这个长度会满足单调性，即如果长的串满足，短的一定满足。其实不对。反例：<br>$10001$<br>整个串满足条件，但找不到长度为4的合法串。<br>下面给出官方题解。<br>用$f$表示累积和序列，那么原条件可表示为：</p>
+<h1 id="解法"><a href="#解法" class="headerlink" title="解法"></a>解法</h1><p>$N\leq 10^5$，因此需要$n\log n$的算法。<br>我原以为这个长度会满足单调性，即如果长的串满足，短的一定满足。其实不对。比如<code>10001</code>，整个串满足条件，但找不到长度为4的合法串。<br>下面给出官方题解。<br>用$f$表示累积和序列，那么对于$[L,R]$这个子串，原条件可表示为：</p>
 <script type="math/tex; mode=display">
-f(R)-f(L-1)\geq \frac{R-L+1}{2} \quad(1)</script><p>这个条件可以等价表示为</p>
+f(R)-f(L-1)\geq \left\lfloor\frac{R-L+1}{2}\right\rfloor \quad(1)</script><p>这个条件可以等价表示为</p>
 <script type="math/tex; mode=display">
-f(R)-f(L-1)\geq \frac{R-L}{2.0} \quad(2)</script><p><strong>证明</strong><br>(1)-&gt;(2)<br>因为$\frac{R-L+1}{2}\geq \frac{R-L}{2.0}$（可根据$R-L$的奇偶讨论）。<br>(2)-&gt;(1)<br>当$R-L$为偶数时，$\frac{R-L}{2.0}=\frac{R-L+1}{2}$。<br>当$R-L$为奇数时，因为$f(R)-f(L-1)$为整数，(2)实际上是$f(R)-f(L-1)\geq \frac{R-L}{2.0}+0.5$。<br>证毕。</p>
+f(R)-f(L-1)\geq \frac{R-L}{2} \quad(2)</script><p><strong>证明</strong><br>(1)-&gt;(2)<br>因为$\left\lfloor\frac{R-L+1}{2}\right\rfloor\geq \frac{R-L}{2}$（可根据$R-L$的奇偶讨论）。<br>(2)-&gt;(1)<br>因为$f(R)-f(L-1)$为整数，(2)实际上是$f(R)-f(L-1)\geq \left\lceil\frac{R-L}{2}\right\rceil=\left\lfloor\frac{R-L+1}{2}\right\rfloor$。<br>证毕。</p>
 <p>(2)可变为</p>
 <script type="math/tex; mode=display">
 2f(R)-R\geq 2f(L-1)-L</script><p>那么可形成两个这样的序列：</p>
-<script type="math/tex; mode=display">p(i)=2f(i)-i\\
-q(i)=2f(i-1)-i</script><p>对于每个$R$，计算最小的满足$p(R)\geq q(L)$的$L$。<br>当然这里要用二分来计算$L$，否则就没有意义了。然而$q$并不是一个单调序列。<br>实际上不需要完整的$q$序列，因为如果$i&lt;j$，且$q(i)&lt;q(j)$的话，计算$L$时肯定不会选到$j$。因此只要从$i=1$开始，形成一个单调递减序列$q’$就行了。$q’[i].index=j$，$q’[i].value = q[j]$。<br>官方的程序用了一个比较聪明的做法，可以不用结构体。使用原序列的长度，如果下一个元素比现在的大，那么下一个元素变为与现在的一样大，那么在二分时会得到正确的结果。</p>
+<script type="math/tex; mode=display">
+p(i)=2f(i)-i\\
+q(i)=2f(i-1)-i</script><p>为了得到以$R$结尾的最长子串，就是要计算最小的满足$p(R)\geq q(L)$的$L$。<br>当然这里要用二分来计算$L$，否则就不能降低复杂度。然而$q$并不是一个单调序列。<br>实际上不需要完整的$q$序列。如果$q$中存在递增部分：$i&lt;j\Rightarrow q(i)&lt;q(j)$，那么$p(R)\geq q(j)\Rightarrow p(R)\geq q(i)$且$[i,R]$比$[j,R]$更长，因此不会选到$j$。因此只要从$i=1$开始，形成一个单调递减子序列$q’$，就可以做二分了。<br>官方的程序用了一个比较聪明的做法，不是先提取单调子序列，而是改变元素值，使原序列成为（非严格）单调序列。方法是：如果下一个元素比现在的大，那么下一个元素变为与现在的一样大。</p>
 
       
     </div>
