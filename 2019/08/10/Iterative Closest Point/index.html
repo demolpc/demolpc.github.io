@@ -94,18 +94,18 @@
   };
 </script>
 
-  <meta name="description" content="问题：要把三维空间中的点集$\{p_1,p_2,\cdots,p_n\}$通过旋转、平移和点集$\{q_1,q_2,\cdots,q_n\}$匹配起来。$p$可能是预先给定的模型，而$q$是在另一个坐标系中观察的结果，匹配就是要找到两个坐标系的转换关系。 给定对应关系的情况先考虑简单的情形，即给定了两个集合中点的对应关系，即$p_1$对应$q_1$等等。定义两个点集间的距离为：  \sum_{i=">
-<meta name="keywords" content="ICP">
+  <meta name="description" content="问题要把三维空间中的点集$\{p_1,p_2,\cdots,p_n\}$通过旋转、平移和点集$\{q_1,q_2,\cdots,q_n\}$匹配起来。$p$可能是预先给定的模型，而$q$是在另一个坐标系中观察的结果，匹配就是要找到两个坐标系的转换关系。 给定对应关系的情况先考虑简单的情形，即给定了两个集合中点的对应关系，$p_i$对应$q_i$。定义两个点集间的距离为：  \sum_{i=1}^n">
+<meta name="keywords" content="ICP,SVD,四元数">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Iterative Closest Point">
 <meta property="og:url" content="http://yoursite.com/2019/08/10/Iterative Closest Point/index.html">
 <meta property="og:site_name" content="demolpc的博客">
-<meta property="og:description" content="问题：要把三维空间中的点集$\{p_1,p_2,\cdots,p_n\}$通过旋转、平移和点集$\{q_1,q_2,\cdots,q_n\}$匹配起来。$p$可能是预先给定的模型，而$q$是在另一个坐标系中观察的结果，匹配就是要找到两个坐标系的转换关系。 给定对应关系的情况先考虑简单的情形，即给定了两个集合中点的对应关系，即$p_1$对应$q_1$等等。定义两个点集间的距离为：  \sum_{i=">
+<meta property="og:description" content="问题要把三维空间中的点集$\{p_1,p_2,\cdots,p_n\}$通过旋转、平移和点集$\{q_1,q_2,\cdots,q_n\}$匹配起来。$p$可能是预先给定的模型，而$q$是在另一个坐标系中观察的结果，匹配就是要找到两个坐标系的转换关系。 给定对应关系的情况先考虑简单的情形，即给定了两个集合中点的对应关系，$p_i$对应$q_i$。定义两个点集间的距离为：  \sum_{i=1}^n">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-10T01:59:24.944Z">
+<meta property="og:updated_time" content="2019-08-10T10:11:51.876Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Iterative Closest Point">
-<meta name="twitter:description" content="问题：要把三维空间中的点集$\{p_1,p_2,\cdots,p_n\}$通过旋转、平移和点集$\{q_1,q_2,\cdots,q_n\}$匹配起来。$p$可能是预先给定的模型，而$q$是在另一个坐标系中观察的结果，匹配就是要找到两个坐标系的转换关系。 给定对应关系的情况先考虑简单的情形，即给定了两个集合中点的对应关系，即$p_1$对应$q_1$等等。定义两个点集间的距离为：  \sum_{i=">
+<meta name="twitter:description" content="问题要把三维空间中的点集$\{p_1,p_2,\cdots,p_n\}$通过旋转、平移和点集$\{q_1,q_2,\cdots,q_n\}$匹配起来。$p$可能是预先给定的模型，而$q$是在另一个坐标系中观察的结果，匹配就是要找到两个坐标系的转换关系。 给定对应关系的情况先考虑简单的情形，即给定了两个集合中点的对应关系，$p_i$对应$q_i$。定义两个点集间的距离为：  \sum_{i=1}^n">
 
 
 
@@ -358,7 +358,7 @@
                 
               
 
-              <time title="创建时间：2019-08-10 09:56:10 / 修改时间：09:59:24" itemprop="dateCreated datePublished" datetime="2019-08-10T09:56:10+08:00">2019-08-10</time>
+              <time title="创建时间：2019-08-10 09:56:10 / 修改时间：18:11:51" itemprop="dateCreated datePublished" datetime="2019-08-10T09:56:10+08:00">2019-08-10</time>
             </span>
           
 
@@ -417,8 +417,8 @@
       
 
       
-        <p>问题：要把三维空间中的点集$\{p_1,p_2,\cdots,p_n\}$通过旋转、平移和点集$\{q_1,q_2,\cdots,q_n\}$匹配起来。$p$可能是预先给定的模型，而$q$是在另一个坐标系中观察的结果，匹配就是要找到两个坐标系的转换关系。</p>
-<h1 id="给定对应关系的情况"><a href="#给定对应关系的情况" class="headerlink" title="给定对应关系的情况"></a>给定对应关系的情况</h1><p>先考虑简单的情形，即给定了两个集合中点的对应关系，即$p_1$对应$q_1$等等。<br>定义两个点集间的距离为：</p>
+        <h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>要把三维空间中的点集$\{p_1,p_2,\cdots,p_n\}$通过旋转、平移和点集$\{q_1,q_2,\cdots,q_n\}$匹配起来。$p$可能是预先给定的模型，而$q$是在另一个坐标系中观察的结果，匹配就是要找到两个坐标系的转换关系。</p>
+<h1 id="给定对应关系的情况"><a href="#给定对应关系的情况" class="headerlink" title="给定对应关系的情况"></a>给定对应关系的情况</h1><p>先考虑简单的情形，即给定了两个集合中点的对应关系，$p_i$对应$q_i$。<br>定义两个点集间的距离为：</p>
 <script type="math/tex; mode=display">
 \sum_{i=1}^n\|p_i-q_i\|^2</script><p>我们的目标是找到旋转矩阵$R$、平移向量$b$，使得$p$变换后与$q$的距离最小</p>
 <script type="math/tex; mode=display">
@@ -440,7 +440,7 @@ q_i'=q_i-\bar{q}</script><p>为点相对于质心的坐标。</p>
 \end{aligned}</script><p>上式中$Rp_i’\cdot Rp_i’=|p_i’|^2$是因为旋转不改变向量长度。<br>上式第一项与$R$无关，因此只要最小化第二项。或者等价地求如下最大化：</p>
 <script type="math/tex; mode=display">
 \max_R\sum_{i=1}^nRp_i'\cdot q_i'</script><p>下面用两种方法来求解。<br>采用新符号$x_i=p_i’$，$y_i=q_i’$</p>
-<h2 id="SVD"><a href="#SVD" class="headerlink" title="SVD"></a>SVD</h2><p>下面采用资料[3]而不是[4]中的推导，因为更简单直接。</p>
+<h2 id="SVD"><a href="#SVD" class="headerlink" title="SVD"></a>SVD</h2><p>用SVD推导时似乎常引用资料[4]，不过我下面采用资料[3]中的推导，因为更简单直接。</p>
 <script type="math/tex; mode=display">
 \begin{aligned}
 \sum_{i=1}^nRx_i\cdot y_i&=\sum_{i=1}^ny_i^TRx_i\\
@@ -453,7 +453,7 @@ q_i'=q_i-\bar{q}</script><p>为点相对于质心的坐标。</p>
 &=\sum_{i=1}^3\lambda_iT_{ii}
 \end{aligned}</script><p>由于$V,R,U$都是正交矩阵，因此$T$是正交矩阵，即每一列的长度为1，则$T_{ii}\leq 1$，因此：</p>
 <script type="math/tex; mode=display">
-\sum_{i=1}^3\lambda_iT_{ii}\leq\sum_{i=1}^3\lambda_i</script><p>当$T_{ii}=1$时等号成立，此时$T$的其他元素为0，即$T=I$。由$V^TRU=I$，得旋转矩阵：</p>
+\sum_{i=1}^3\lambda_iT_{ii}\leq\sum_{i=1}^3\lambda_i</script><p>当$T_{ii}=1$时等号成立，此时$T$的其他元素为0，即$T=I$。由$V^TRU=T=I$，得旋转矩阵：</p>
 <script type="math/tex; mode=display">
 R=VU^T</script><p>当然旋转矩阵应该满足$\det(R)=1$。如果求得$\det (VU^T)=-1$，那说明$T$不能等于$I$。</p>
 <script type="math/tex; mode=display">
@@ -486,7 +486,7 @@ R=V\begin{bmatrix}
 &=q^T\left(\sum_{i=1}^n[x_i]_R^T[y_i]_L\right)q\\
 &\triangleq q^TMq
 \end{aligned}</script><p>可以<a href="#proof2">验证</a>$[x_i]_R^T[y_i]_L$是对称阵，因此$M$是对称阵。<br>那剩下的就是线代的标准内容了，$q^TMq$能取得的最大值为$M$的最大的特征值，对应的$q$为对应的归一化的特征向量。</p>
-<h1 id="ICP"><a href="#ICP" class="headerlink" title="ICP"></a>ICP</h1><p>接下来就是不知道对应点的情况，也就是ICP要解决的。<br>这部分比较简单。既然不知道$p_i$对应的$q$，那我可以把$p_i$与点集$q$中与它最近的点对应。假设这是在第$k$轮，这样得到的距离记为$c_k$（c代表correspondence）。<br>有了对应关系，就可以按上面的方法做配准，记得到的距离为$d_k$。因为我们做了最小化，显然</p>
+<h1 id="ICP"><a href="#ICP" class="headerlink" title="ICP"></a>ICP</h1><p>接下来就是不知道对应点的情况，也就是ICP要解决的。<br>这部分比较简单。既然不知道$p_i$对应的$q$，那我可以把$p_i$与点集$q$中离它最近的点对应。假设这是在第$k$轮，这样得到的距离记为$c_k$（c代表correspondence）。<br>有了对应关系，就可以按上面的方法做配准，记得到的距离为$d_k$。因为我们做了最小化，显然</p>
 <script type="math/tex; mode=display">
 d_k\leq c_k</script><p>对于变换后的点集$p$中的每个点，我们再在$q$中找距离最近的点。这样显然每个$p_i$对应的距离都只可能减小，因此总的距离也只会减小，即：</p>
 <script type="math/tex; mode=display">
@@ -499,7 +499,13 @@ d_k-d_{k+1}<\tau</script><h1 id="附录"><a href="#附录" class="headerlink" ti
 $$
 (pq)\cdot r=p\cdot(rq^*)
 $$
-然后代入$p:=qx_i, q:=q^*, r:=y_i$就得证。
+然后代入
+$$
+p\leftarrow qx_i\\
+q\leftarrow q^*\\
+r\leftarrow y_i
+$$
+就得证。
 由于
 $$
 (pq)\cdot r = r^T([p]_Lq)\\
@@ -521,7 +527,7 @@ $$
 <p>因为$x$,$y$都是纯四元数，</p>
 <script type="math/tex; mode=display">
 \begin{aligned}
-[x]_R^\top[y]_L&=\begin{bmatrix}
+\left[x\right]_R^\top[y]_L&=\begin{bmatrix}
 0 & \mathbf{x}_v^\top\\
 -\mathbf{x}_v & [\mathbf{x}_v]_{\times}
 \end{bmatrix}\begin{bmatrix}
@@ -536,10 +542,14 @@ $$
 <script type="math/tex; mode=display">
  \mathbf{x}_v\mathbf{y}_v^\top+[\mathbf{x}_v]_{\times}[\mathbf{y}_v]_{\times}</script><p>是对称阵，这个没想到好办法，直接验证了。</p>
 <h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ol>
-<li><a href="http://web.cs.iastate.edu/~cs577/handouts/quaternion.pdf" target="_blank" rel="noopener">四元数用于求解shape registration</a></li>
-<li>A Method for Registration of 3-D Shapes（ICP原始文献）</li>
-<li><a href="https://cnx.org/contents/HV-RsdwL@23/Molecular-Distance-Measures#MatrixAlignment" target="_blank" rel="noopener">SVD方法推导</a></li>
-<li>Least-Squares Fitting of Two 3-D Point Sets 另一种SVD推导</li>
+<li><p><a href="http://web.cs.iastate.edu/~cs577/handouts/quaternion.pdf" target="_blank" rel="noopener">四元数用于求解shape registration</a></p>
+</li>
+<li><p><a href="https://ieeexplore.ieee.org/document/121791" target="_blank" rel="noopener">A Method for Registration of 3-D Shapes</a>（ICP原始文献）</p>
+</li>
+<li><p><a href="https://cnx.org/contents/HV-RsdwL@23/Molecular-Distance-Measures#MatrixAlignment" target="_blank" rel="noopener">SVD方法推导</a></p>
+</li>
+<li><p><a href="https://ieeexplore.ieee.org/document/4767965" target="_blank" rel="noopener">Least-Squares Fitting of Two 3-D Point Sets</a> （另一种SVD推导）</p>
+</li>
 </ol>
 
       
@@ -572,6 +582,10 @@ $$
         <div class="post-tags">
           
             <a href="/tags/ICP/" rel="tag"># ICP</a>
+          
+            <a href="/tags/SVD/" rel="tag"># SVD</a>
+          
+            <a href="/tags/四元数/" rel="tag"># 四元数</a>
           
         </div>
       
@@ -712,7 +726,11 @@ $$
         
           
         
-        <span class="site-state-item-count">1</span>
+          
+        
+          
+        
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">标签</span>
         </a>
       </div>
@@ -747,9 +765,9 @@ $$
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#给定对应关系的情况"><span class="nav-number">1.</span> <span class="nav-text">给定对应关系的情况</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#SVD"><span class="nav-number">1.1.</span> <span class="nav-text">SVD</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四元数"><span class="nav-number">1.2.</span> <span class="nav-text">四元数</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ICP"><span class="nav-number">2.</span> <span class="nav-text">ICP</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#附录"><span class="nav-number">3.</span> <span class="nav-text">附录</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#proof1"><span class="nav-number">3.1.</span> <span class="nav-text">四元数性质证明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#proof2"><span class="nav-number">3.2.</span> <span class="nav-text">
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#问题"><span class="nav-number">1.</span> <span class="nav-text">问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#给定对应关系的情况"><span class="nav-number">2.</span> <span class="nav-text">给定对应关系的情况</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#SVD"><span class="nav-number">2.1.</span> <span class="nav-text">SVD</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四元数"><span class="nav-number">2.2.</span> <span class="nav-text">四元数</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ICP"><span class="nav-number">3.</span> <span class="nav-text">ICP</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#附录"><span class="nav-number">4.</span> <span class="nav-text">附录</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#proof1"><span class="nav-number">4.1.</span> <span class="nav-text">四元数性质证明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#proof2"><span class="nav-number">4.2.</span> <span class="nav-text">
 对称阵验证
-</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-number">4.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-number">5.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
             
 
           </div>
