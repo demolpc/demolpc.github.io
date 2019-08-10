@@ -98,10 +98,10 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="Superior Substring">
 <meta property="og:url" content="http://yoursite.com/2019/07/24/Superior Substring/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="demolpc的博客">
 <meta property="og:description" content="题目地址 题意核心问题是，给定一个长为$N$的01串，连续子串中1的数量大于等于子串长度一半（向下取整）的为合法串。问合法串的最大长度。 解法$N\leq 10^5$，因此需要$n\log n$的算法。我原以为这个长度会满足单调性，即如果长的串满足，短的一定满足。其实不对。反例：$10001$整个串满足条件，但找不到长度为4的合法串。下面给出官方题解。用$f$表示累积和序列，那么原条件可表示为：">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-24T14:28:04.262Z">
+<meta property="og:updated_time" content="2019-08-06T14:27:50.792Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Superior Substring">
 <meta name="twitter:description" content="题目地址 题意核心问题是，给定一个长为$N$的01串，连续子串中1的数量大于等于子串长度一半（向下取整）的为合法串。问合法串的最大长度。 解法$N\leq 10^5$，因此需要$n\log n$的算法。我原以为这个长度会满足单调性，即如果长的串满足，短的一定满足。其实不对。反例：$10001$整个串满足条件，但找不到长度为4的合法串。下面给出官方题解。用$f$表示累积和序列，那么原条件可表示为：">
@@ -123,7 +123,7 @@
 </script>
 
   
-  <title>Superior Substring | Hexo</title>
+  <title>Superior Substring | demolpc的博客</title>
   
 
 
@@ -182,7 +182,7 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Hexo</span>
+        <span class="site-title">demolpc的博客</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -219,6 +219,22 @@
     
 
     <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
 
   </li>
         
@@ -285,13 +301,13 @@
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/24/Superior Substring/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
+      <meta itemprop="name" content="demolpc">
       <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
+      <meta itemprop="name" content="demolpc的博客">
     </span>
 
     
@@ -325,7 +341,7 @@
                 
               
 
-              <time title="创建时间：2019-07-24 22:11:52 / 修改时间：22:28:04" itemprop="dateCreated datePublished" datetime="2019-07-24T22:11:52+08:00">2019-07-24</time>
+              <time title="创建时间：2019-07-24 22:11:52" itemprop="dateCreated datePublished" datetime="2019-07-24T22:11:52+08:00">2019-07-24</time>
             </span>
           
 
@@ -333,8 +349,33 @@
             
 
             
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-08-06 22:27:50" itemprop="dateModified" datetime="2019-08-06T22:27:50+08:00">2019-08-06</time>
+              </span>
+            
           
 
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/算法题/" itemprop="url" rel="index"><span itemprop="name">算法题</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -482,7 +523,7 @@ q(i)=2f(i-1)-i</script><p>对于每个$R$，计算最小的满足$p(R)\geq q(L)$
 
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
   
-  <p class="site-author-name" itemprop="name">John Doe</p>
+  <p class="site-author-name" itemprop="name">demolpc</p>
   <div class="site-description motion-element" itemprop="description"></div>
 </div>
 
@@ -493,12 +534,33 @@ q(i)=2f(i-1)-i</script><p>对于每个$R$，计算最小的满足$p(R)\geq q(L)$
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-count">6</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
     
 
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/categories/">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">分类</span>
+        </a>
+      </div>
     
 
     
@@ -557,7 +619,7 @@ q(i)=2f(i-1)-i</script><p>对于每个$R$，计算最小的满足$p(R)\geq q(L)$
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">John Doe</span>
+  <span class="author" itemprop="copyrightHolder">demolpc</span>
 
   
 
