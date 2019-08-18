@@ -102,7 +102,7 @@
 <meta property="og:site_name" content="demolpc的博客">
 <meta property="og:description" content="定义 \[ Q = a+bi+cj+dk \] 其中\({i,j,k}\)是虚数单元，满足： \[ i^2=j^2=k^2=ijk=-1 \] \(Q=a\)称为实四元数，\(Q=bi+cj+dk\)称为虚四元数。 实部+虚部的表示方式有时不方便，只要遵循虚部的运算规则，就可以写成标量+向量的形式： \[ Q=q_w+q_xi+q_yj+q_zk\quad \Leftrightarr">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-18T02:04:10.728Z">
+<meta property="og:updated_time" content="2019-08-18T11:06:27.066Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="四元数">
 <meta name="twitter:description" content="定义 \[ Q = a+bi+cj+dk \] 其中\({i,j,k}\)是虚数单元，满足： \[ i^2=j^2=k^2=ijk=-1 \] \(Q=a\)称为实四元数，\(Q=bi+cj+dk\)称为虚四元数。 实部+虚部的表示方式有时不方便，只要遵循虚部的运算规则，就可以写成标量+向量的形式： \[ Q=q_w+q_xi+q_yj+q_zk\quad \Leftrightarr">
@@ -402,7 +402,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-08-18 10:04:10" itemprop="dateModified" datetime="2019-08-18T10:04:10+08:00">2019-08-18</time>
+                <time title="修改时间：2019-08-18 19:06:27" itemprop="dateModified" datetime="2019-08-18T19:06:27+08:00">2019-08-18</time>
               </span>
             
           
@@ -523,7 +523,7 @@ a_z &amp; 0 &amp; -a_x\\
 [\mathbf{p}]_R[\mathbf{q}]_L=[\mathbf{q}]_L[\mathbf{p}]_R
 \]</span></p>
 <h2 id="identity">identity</h2>
-<p>单位四元数<span class="math inline">\(\mathbf{q_1}\)</span>满足： <span class="math display">\[
+<p>幺元<span class="math inline">\(\mathbf{q_1}\)</span>满足： <span class="math display">\[
 \mathbf{q_1}\otimes\mathbf{q}=\mathbf{q}\otimes\mathbf{q_1}=\mathbf{q}
 \]</span> 它就是实数1： <span class="math display">\[
 \mathbf{q_1}=1=
@@ -556,33 +556,33 @@ q_w\\
 \]</span> 显然， <span class="math display">\[
 \mathbf{q}^{-1}=\frac{\mathbf{q}^*}{\|\mathbf{q}\|^2}
 \]</span></p>
-<h2 id="单元四元数">单元四元数</h2>
+<h2 id="单位四元数">单位四元数</h2>
 <p>或者叫归一化的四元数定义为<span class="math inline">\(\|\mathbf{q}\|=1\)</span>，因此 <span class="math display">\[
 \mathbf{q}^{-1}=\mathbf{q}^*
-\]</span> 单元四元数可以写成： <span class="math display">\[
+\]</span> 单位四元数可以写成： <span class="math display">\[
 \mathbf{q}=
 \begin{bmatrix}
 \cos\theta\\
 \mathbf{u}\sin\theta
 \end{bmatrix}
-\]</span> 其中<span class="math inline">\(\mathbf{u}\)</span>为单位向量。</p>
+\]</span> 其中<span class="math inline">\(\|\mathbf{u}\|=1\)</span>。</p>
 <h1 id="附加性质">附加性质</h1>
 <h2 id="虚四元数的乘法">虚四元数的乘法</h2>
 <p><span class="math display">\[
 \mathbf{q}_v\otimes\mathbf{q}_v=-\mathbf{q}_v^\top\mathbf{q}_v=-\|\mathbf{q}_v\|^2
-\]</span> 对于单位长度的虚四元数<span class="math inline">\(\|\mathbf{u}\|=1\)</span>，因此： <span class="math display">\[
+\]</span> 对于单位虚四元数<span class="math inline">\(\|\mathbf{u}\|=1\)</span>，因此： <span class="math display">\[
 \mathbf{u}\otimes \mathbf{u}=-1
 \]</span> 与虚数<span class="math inline">\(i\cdot i=-1\)</span>类似。</p>
 <h2 id="虚四元数的指数函数">虚四元数的指数函数</h2>
 <p>与实数类似，根据级数展开来定义： <span class="math display">\[
 e^{\mathbf{q}}\triangleq \sum_{0}^{\infty}\frac{1}{k!}\mathbf{q}^k
-\]</span> 对于虚四元数<span class="math inline">\(\mathbf{v}=\mathbf{u}\theta\)</span>，其中<span class="math inline">\(\mathbf{u}\)</span>为单位长度，有： <span class="math display">\[
+\]</span> 对于虚四元数<span class="math inline">\(\mathbf{v}=\mathbf{u}\theta\)</span>，其中<span class="math inline">\(\|\mathbf{u}\|=1\)</span>，有： <span class="math display">\[
 e^{\mathbf{v}}=e^{\mathbf{u}\theta}=\cos\theta+\mathbf{u}\sin\theta=
 \begin{bmatrix}
 \cos\theta\\
 \mathbf{u}\sin\theta
 \end{bmatrix}
-\]</span> 是虚数的欧拉公式的扩展。 注意<span class="math inline">\(\|e^{\mathbf{v}}\|=1\)</span>，因此虚四元数的指数函数为单元四元数。</p>
+\]</span> 是虚数的欧拉公式的扩展。 注意<span class="math inline">\(\|e^{\mathbf{v}}\|=1\)</span>，因此虚四元数的指数函数为单位 四元数。</p>
 <h2 id="一般四元数的指数函数">一般四元数的指数函数</h2>
 <p>由于当其中一个四元数为实数时，四元数乘法满足交换律，因此： <span class="math display">\[
 e^{\mathbf{q}}=e^{q_w+\mathbf{q}_v}=e^{q_w}e^{\mathbf{q}_v}
@@ -813,7 +813,7 @@ e^{\mathbf{q}}=e^{q_w+\mathbf{q}_v}=e^{q_w}e^{\mathbf{q}_v}
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#定义"><span class="nav-number">1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#主要性质"><span class="nav-number">2.</span> <span class="nav-text">主要性质</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#乘法"><span class="nav-number">2.1.</span> <span class="nav-text">乘法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#identity"><span class="nav-number">2.2.</span> <span class="nav-text">identity</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#共轭"><span class="nav-number">2.3.</span> <span class="nav-text">共轭</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#norm"><span class="nav-number">2.4.</span> <span class="nav-text">norm</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#逆"><span class="nav-number">2.5.</span> <span class="nav-text">逆</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单元四元数"><span class="nav-number">2.6.</span> <span class="nav-text">单元四元数</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#附加性质"><span class="nav-number">3.</span> <span class="nav-text">附加性质</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#虚四元数的乘法"><span class="nav-number">3.1.</span> <span class="nav-text">虚四元数的乘法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#虚四元数的指数函数"><span class="nav-number">3.2.</span> <span class="nav-text">虚四元数的指数函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一般四元数的指数函数"><span class="nav-number">3.3.</span> <span class="nav-text">一般四元数的指数函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单位四元数的对数"><span class="nav-number">3.4.</span> <span class="nav-text">单位四元数的对数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#exponential-forms-of-the-type-mathbfqt"><span class="nav-number">3.5.</span> <span class="nav-text">Exponential forms of the type \(\mathbf{q}^t\)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-number">4.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#定义"><span class="nav-number">1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#主要性质"><span class="nav-number">2.</span> <span class="nav-text">主要性质</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#乘法"><span class="nav-number">2.1.</span> <span class="nav-text">乘法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#identity"><span class="nav-number">2.2.</span> <span class="nav-text">identity</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#共轭"><span class="nav-number">2.3.</span> <span class="nav-text">共轭</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#norm"><span class="nav-number">2.4.</span> <span class="nav-text">norm</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#逆"><span class="nav-number">2.5.</span> <span class="nav-text">逆</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单位四元数"><span class="nav-number">2.6.</span> <span class="nav-text">单位四元数</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#附加性质"><span class="nav-number">3.</span> <span class="nav-text">附加性质</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#虚四元数的乘法"><span class="nav-number">3.1.</span> <span class="nav-text">虚四元数的乘法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#虚四元数的指数函数"><span class="nav-number">3.2.</span> <span class="nav-text">虚四元数的指数函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一般四元数的指数函数"><span class="nav-number">3.3.</span> <span class="nav-text">一般四元数的指数函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单位四元数的对数"><span class="nav-number">3.4.</span> <span class="nav-text">单位四元数的对数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#exponential-forms-of-the-type-mathbfqt"><span class="nav-number">3.5.</span> <span class="nav-text">Exponential forms of the type \(\mathbf{q}^t\)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-number">4.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
             
 
           </div>
