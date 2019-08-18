@@ -14,7 +14,7 @@
   <entry>
     <title><![CDATA[奇异值分解]]></title>
     <url>%2F2019%2F08%2F10%2F%E5%A5%87%E5%BC%82%E5%80%BC%E5%88%86%E8%A7%A3%2F</url>
-    <content type="text"><![CDATA[对称矩阵的特征值分解： \[ A=VDV^T \] 特征向量\(\{v_i\}\)是正交归一的，作为空间的一组基很方便。 从线性变换的角度，\(A\)将\(\rm{R^n}\)中的向量\(x\)变换到同一个空间。对\(x\)做展开： \[ x = \sum_{i=1}^nc_iv_i \] 那么 \[ Ax = \sum_{i=1}^nc_i\delta_iv_i \] 即会根据特征值大小，对分量放大或缩小。 # SVD 如果\(A\)是\(m\times n\)的矩阵，\(A\)将\(\rm{R^n}\)空间的向量\(x\)变换到\(\rm{R^m}\)，又该如何选择定义域和值域中的基呢？ \(\{v_1,v_2,\dots,v_n\}\)表示\(\rm{R^n}\)的一组正交归一基，其中\(\{v_1,v_2,\dots,v_k\}\)张成\(A\)的行空间（\(k\)为\(A\)的秩），那么 \[ Av_i\neq \mathbf{0} \quad 1\leq i\leq k \] \(\{Av_1,Av_2,\dots,Av_k\}\)也是线性无关的，因为如果存在不全为0的数\(c_i\)，使得 \[ \sum_{i=1}^kc_i(Av_i)=\sum_{i=1}^kA(c_iv_i)=\mathbf{0} \] 说明\(\sum_{i=1}^kc_iv_i\)在\(A\)的nullspace，这与\(v_i\)在行空间中矛盾。 \(\{u_1,u_2,\dots,u_m\}\)表示\(\rm{R^m}\)的一组归一化的基。将矩阵\(A\)表示为\(A=U\Sigma V^T\)（\(\Sigma\)为\(m\times n\)的矩阵，非零元只在主对角线上）并不难。只需让\(Av_i=\sigma_iu_i\)（\(v_i,u_i\)分别为\(V,U\)的第\(i\)列）。如上，虽然\(\{u_i=\frac{Av_i}{\sigma_i}, 1\leq i\leq k\}\)是线性无关的，但不能保证是正交的。 为了保证正交，我们不能任意选取\(\rm{R^n}\)的正交归一基作为\(V\)。 满足要求的\(\{v_i\}\)是\(A^TA\)的特征向量： \[ A^TAv_i=\lambda_iv_i \] 那么 \[ (Av_i)^T(Av_j)=v_i^TA^TAv_j=v_i^T(\lambda_jv_j)=\lambda_jv_i^Tv_j \] 因此\(Av_i\)与\(Av_j\)正交。 上式中令\(i=j\)，得 \[ \lambda_i=\|Av_i\|^2\geq 0 \] 排列特征值，使得： \[ \lambda_1\geq\lambda_2\geq\cdots\geq\lambda_k&gt;0\\ \lambda_{i}=0 \quad i&gt;k \] 由于\(i&gt;k\)时，\(\|Av_i\|=0\)，得到 \[ Av_i=\mathbf{0}\quad i&gt;k \] 因为\(\{v_i\}\)相互正交，所以\(k\)是\(A\)的秩。 为了得到\(\rm{R^m}\)中的一组基，归一化\(Av_i\)， \[ u_i=\frac{Av_i}{\|Av_i\|}=\frac{Av_i}{\sqrt{\lambda_i}}\quad 1\leq i\leq k \] 称\(\sigma_i=\sqrt{\lambda_i}\)为奇异值。 如果\(k&lt;m\)，继续补全基中还需的向量（按Gram–Schmidt过程来就行了）。]]></content>
+    <content type="text"><![CDATA[对称矩阵的特征值分解： \[ A=VDV^T \] 特征向量\(\{v_i\}\)是正交归一的，作为空间的一组基很方便。 从线性变换的角度，\(A\)将\(\rm{R^n}\)中的向量\(x\)变换到同一个空间。对\(x\)做展开： \[ x = \sum_{i=1}^nc_iv_i \] 那么 \[ Ax = \sum_{i=1}^nc_i\delta_iv_i \] 即会根据特征值大小，对分量放大或缩小。 SVD 如果\(A\)是\(m\times n\)的矩阵，\(A\)将\(\rm{R^n}\)空间的向量\(x\)变换到\(\rm{R^m}\)，又该如何选择定义域和值域中的基呢？ \(\{v_1,v_2,\dots,v_n\}\)表示\(\rm{R^n}\)的一组正交归一基，其中\(\{v_1,v_2,\dots,v_k\}\)张成\(A\)的行空间（\(k\)为\(A\)的秩），那么 \[ Av_i\neq \mathbf{0} \quad 1\leq i\leq k \] \(\{Av_1,Av_2,\dots,Av_k\}\)也是线性无关的，因为如果存在不全为0的数\(c_i\)，使得 \[ \sum_{i=1}^kc_i(Av_i)=\sum_{i=1}^kA(c_iv_i)=\mathbf{0} \] 说明\(\sum_{i=1}^kc_iv_i\)在\(A\)的nullspace，这与\(v_i\)在行空间中矛盾。 \(\{u_1,u_2,\dots,u_m\}\)表示\(\rm{R^m}\)的一组归一化的基。将矩阵\(A\)表示为\(A=U\Sigma V^T\)（\(\Sigma\)为\(m\times n\)的矩阵，非零元只在主对角线上）并不难。只需让\(Av_i=\sigma_iu_i\)（\(v_i,u_i\)分别为\(V,U\)的第\(i\)列）。如上，虽然\(\{u_i=\frac{Av_i}{\sigma_i}, 1\leq i\leq k\}\)是线性无关的，但不能保证是正交的。 为了保证正交，我们不能任意选取\(\rm{R^n}\)的正交归一基作为\(V\)。 满足要求的\(\{v_i\}\)是\(A^TA\)的特征向量： \[ A^TAv_i=\lambda_iv_i \] 那么 \[ (Av_i)^T(Av_j)=v_i^TA^TAv_j=v_i^T(\lambda_jv_j)=\lambda_jv_i^Tv_j \] 因此\(Av_i\)与\(Av_j\)正交。 上式中令\(i=j\)，得 \[ \lambda_i=\|Av_i\|^2\geq 0 \] 排列特征值，使得： \[ \lambda_1\geq\lambda_2\geq\cdots\geq\lambda_k&gt;0\\ \lambda_{i}=0 \quad i&gt;k \] 由于\(i&gt;k\)时，\(\|Av_i\|=0\)，得到 \[ Av_i=\mathbf{0}\quad i&gt;k \] 因为\(\{v_i\}\)相互正交，所以\(k\)是\(A\)的秩。 为了得到\(\rm{R^m}\)中的一组基，归一化\(Av_i\)， \[ u_i=\frac{Av_i}{\|Av_i\|}=\frac{Av_i}{\sqrt{\lambda_i}}\quad 1\leq i\leq k \] 称\(\sigma_i=\sqrt{\lambda_i}\)为奇异值。 如果\(k&lt;m\)，继续补全基中还需的向量（按Gram–Schmidt过程来就行了）。]]></content>
       <categories>
         <category>数学</category>
         <category>线性代数</category>
@@ -48,9 +48,9 @@
         <category>SLAM</category>
       </categories>
       <tags>
-        <tag>四元数</tag>
         <tag>ICP</tag>
         <tag>SVD</tag>
+        <tag>四元数</tag>
       </tags>
   </entry>
   <entry>
