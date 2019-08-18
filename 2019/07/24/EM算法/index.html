@@ -101,7 +101,7 @@
 <meta property="og:site_name" content="demolpc的博客">
 <meta property="og:description" content="EM算法就是含有隐变量的概率模型参数的极大似然估计法（或极大后验概率估计法） 用\(x\)表示观测变量（的数据），\(z\)表示隐变量，\(\theta\)表示需要估计的模型参数。 给定观测数据\(x\)，其似然函数为\(p(x|\theta)\)，对数似然函数\(L(\theta) \triangleq \ln p(x|\theta)\)。 极大似然估计： \[   \max_{\th">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-17T13:27:55.362Z">
+<meta property="og:updated_time" content="2019-08-18T01:42:47.075Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="EM算法">
 <meta name="twitter:description" content="EM算法就是含有隐变量的概率模型参数的极大似然估计法（或极大后验概率估计法） 用\(x\)表示观测变量（的数据），\(z\)表示隐变量，\(\theta\)表示需要估计的模型参数。 给定观测数据\(x\)，其似然函数为\(p(x|\theta)\)，对数似然函数\(L(\theta) \triangleq \ln p(x|\theta)\)。 极大似然估计： \[   \max_{\th">
@@ -401,7 +401,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-08-17 21:27:55" itemprop="dateModified" datetime="2019-08-17T21:27:55+08:00">2019-08-17</time>
+                <time title="修改时间：2019-08-18 09:42:47" itemprop="dateModified" datetime="2019-08-18T09:42:47+08:00">2019-08-18</time>
               </span>
             
           
@@ -478,8 +478,7 @@ L(\theta)-L(\theta_n) &amp;=\ln \left(\sum_zp(z|x,\theta_n)\frac{p(z,x|\theta)}{
 &amp;=\sum_zp(z|x,\theta_n)\ln\frac{p(z,x|\theta)}{p(z|x,\theta_n)}-\left(\sum_zp(z|x,\theta_n)\right)\ln p(x|\theta_n)\\  
 &amp;=\sum_zp(z|x,\theta_n)\ln\frac{p(z,x|\theta)}{p(z,x|\theta_n)}  
 \end{aligned}  
-\]</span> 即：<br>
-<span class="math display">\[  
+\]</span> 即： <span class="math display">\[  
 \begin{aligned}  
 L(\theta)&amp;\geq L(\theta_n)+\sum_zp(z|x,\theta_n)\ln\frac{p(z,x|\theta)}{p(z,x|\theta_n)}\\  
 &amp;\triangleq B(\theta,\theta_n)  
@@ -487,8 +486,7 @@ L(\theta)&amp;\geq L(\theta_n)+\sum_zp(z|x,\theta_n)\ln\frac{p(z,x|\theta)}{p(z,
 \]</span> 也就是<span class="math inline">\(B(\theta,\theta_n)\)</span>是<span class="math inline">\(L(\theta)\)</span>的一个下界函数。而且容易看到：<br>
 <span class="math display">\[  
 B(\theta_n,\theta_n) = L(\theta_n)  
-\]</span><br>
-即自变量等于<span class="math inline">\(\theta_n\)</span>时，两个函数值是相等的。<br>
+\]</span> 即自变量等于<span class="math inline">\(\theta_n\)</span>时，两个函数值是相等的。<br>
 那么如果找一个<span class="math inline">\(\theta_{n+1}\)</span>，使得<span class="math inline">\(B(\theta_{n+1},\theta_n)\geq B(\theta_n,\theta_n)\)</span>，就能使<span class="math inline">\(L(\theta)\)</span>增大：<br>
 <span class="math display">\[  
 \begin{aligned}  
@@ -496,15 +494,12 @@ L(\theta_{n+1})&amp;\geq B(\theta_{n+1},\theta_n)\\
 &amp;\geq B(\theta_n,\theta_n)\\  
 &amp;=L(\theta_n)  
 \end{aligned}  
-\]</span> 一种方法是使：<br>
-<span class="math display">\[  
+\]</span> 一种方法是使： <span class="math display">\[  
 \theta_{n+1}=\operatorname{argmax} B(\theta,\theta_n)  
 \]</span> 但是注意这样并不能保证<span class="math inline">\(L(\theta)\)</span>的增长也能极大化，这和<span class="math inline">\(L(\theta)\)</span>的具体形状有关。<br>
-使<span class="math inline">\(B(\theta,\theta_n)\)</span>极大化，等价于极大化下面的式子，因为其他项为常数<br>
-<span class="math display">\[  
+使<span class="math inline">\(B(\theta,\theta_n)\)</span>极大化，等价于极大化下面的式子，因为其他项为常数 <span class="math display">\[  
 Q(\theta,\theta_n)\triangleq \sum_zp(z|x,\theta_n)\ln p(z,x|\theta)  
-\]</span><br>
-这个式子有着鲜明的含义：<br>
+\]</span> 这个式子有着鲜明的含义：<br>
 当有了<span class="math inline">\(x,\theta\)</span>，根据<span class="math inline">\(z\)</span>的概率分布<span class="math inline">\(p(z|x,\theta_n)\)</span>可以采样出<span class="math inline">\(z\)</span>，这样就有了完整的数据，可以做平常的极大似然估计。<br>
 因此EM算法的步骤是：</p>
 <ol type="1">
@@ -632,7 +627,7 @@ p(z|x,\theta)=\frac{p(z,x|\theta)}{p(x|\theta)}=\frac{p(z,x|\theta)}{\sum_{z&#39
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-count">10</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

@@ -101,7 +101,7 @@
 <meta property="og:site_name" content="demolpc的博客">
 <meta property="og:description" content="题目地址 题意 核心问题是，给定一个长为\(N\)的01串，连续子串中1的数量大于等于子串长度一半（向下取整）的为合法串。问合法串的最大长度。 解法 \(N\leq 10^5\)，因此需要\(n\log n\)的算法。 我原以为这个长度会满足单调性，即如果长的串满足，短的一定满足。其实不对。比如10001，整个串满足条件，但找不到长度为4的合法串。 下面给出官方题解。 用\(f\)表">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-17T12:54:17.654Z">
+<meta property="og:updated_time" content="2019-08-18T01:45:57.586Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Superior Substring">
 <meta name="twitter:description" content="题目地址 题意 核心问题是，给定一个长为\(N\)的01串，连续子串中1的数量大于等于子串长度一半（向下取整）的为合法串。问合法串的最大长度。 解法 \(N\leq 10^5\)，因此需要\(n\log n\)的算法。 我原以为这个长度会满足单调性，即如果长的串满足，短的一定满足。其实不对。比如10001，整个串满足条件，但找不到长度为4的合法串。 下面给出官方题解。 用\(f\)表">
@@ -401,7 +401,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-08-17 20:54:17" itemprop="dateModified" datetime="2019-08-17T20:54:17+08:00">2019-08-17</time>
+                <time title="修改时间：2019-08-18 09:45:57" itemprop="dateModified" datetime="2019-08-18T09:45:57+08:00">2019-08-18</time>
               </span>
             
           
@@ -474,8 +474,7 @@ f(R)-f(L-1)\geq \frac{R-L}{2} \quad(2)
 (2)-&gt;(1)<br>
 因为<span class="math inline">\(f(R)-f(L-1)\)</span>为整数，(2)实际上是<span class="math inline">\(f(R)-f(L-1)\geq \left\lceil\frac{R-L}{2}\right\rceil=\left\lfloor\frac{R-L+1}{2}\right\rfloor\)</span>。<br>
 证毕。</p>
-<p>(2)可变为<br>
-<span class="math display">\[
+<p>(2)可变为 <span class="math display">\[
 2f(R)-R\geq 2f(L-1)-L  
 \]</span> 那么可形成两个这样的序列：<br>
 <span class="math display">\[
@@ -597,7 +596,7 @@ q(i)=2f(i-1)-i
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-count">10</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
