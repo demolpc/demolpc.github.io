@@ -94,13 +94,17 @@
   };
 </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="demolpc的博客">
-<meta property="og:url" content="http://yoursite.com/archives/2019/page/2/index.html">
+  <meta name="description" content="Markov不等式：$Z0 \(是随机变量。对于所有\)t0$，有 \[ P(Z\geq t)\leq \frac{E[Z]}{t} \] 证明： \(Z\)的最小最大值分别用\(a,b\)表示 \[ \begin{aligned} P(Z\geq t)&amp;amp;=\int_t^bp(z)dz\\ &amp;amp;\leq \int_a^t\frac{z}{t}p(z)dz+\int_t^b">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hoeffding不等式">
+<meta property="og:url" content="http://yoursite.com/2019/09/07/Hoeffding不等式/index.html">
 <meta property="og:site_name" content="demolpc的博客">
+<meta property="og:description" content="Markov不等式：$Z0 \(是随机变量。对于所有\)t0$，有 \[ P(Z\geq t)\leq \frac{E[Z]}{t} \] 证明： \(Z\)的最小最大值分别用\(a,b\)表示 \[ \begin{aligned} P(Z\geq t)&amp;amp;=\int_t^bp(z)dz\\ &amp;amp;\leq \int_a^t\frac{z}{t}p(z)dz+\int_t^b">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-09-08T02:11:46.304Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="demolpc的博客">
+<meta name="twitter:title" content="Hoeffding不等式">
+<meta name="twitter:description" content="Markov不等式：$Z0 \(是随机变量。对于所有\)t0$，有 \[ P(Z\geq t)\leq \frac{E[Z]}{t} \] 证明： \(Z\)的最小最大值分别用\(a,b\)表示 \[ \begin{aligned} P(Z\geq t)&amp;amp;=\int_t^bp(z)dz\\ &amp;amp;\leq \int_a^t\frac{z}{t}p(z)dz+\int_t^b">
 
 
 
@@ -108,7 +112,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/archives/2019/page/2/">
+  <link rel="canonical" href="http://yoursite.com/2019/09/07/Hoeffding不等式/">
 
 
 
@@ -119,7 +123,7 @@
 </script>
 
   
-  <title>归档 | demolpc的博客</title>
+  <title>Hoeffding不等式 | demolpc的博客</title>
   
 
 
@@ -167,7 +171,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -253,7 +257,7 @@
         
         
           
-          <li class="menu-item menu-item-archives menu-item-active">
+          <li class="menu-item menu-item-archives">
 
     
     
@@ -319,210 +323,278 @@
           
             
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
           
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/07/Hoeffding不等式/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="demolpc">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="demolpc的博客">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">Hoeffding不等式
+
+              
+            
+          </h1>
         
+
+        <div class="post-meta">
+
           
-        
-        嗯..! 目前共计 14 篇日志。 继续努力。
-      </span>
-      
-
-      
-
-        
-        
-        
-
-        
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2019">2019</h1>
-          </div>
-        
-        
+          
 
-        
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+              
+                
+              
 
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/07/24/Yet Again a Subarray Problem/" itemprop="url">
+              <time title="创建时间：2019-09-07 16:25:38" itemprop="dateCreated datePublished" datetime="2019-09-07T16:25:38+08:00">2019-09-07</time>
+            </span>
+          
+
+          
             
-              <span itemprop="name">Yet Again a Subarray Problem</span>
+
             
-          </a>
-        
-      </h2>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-09-08 10:11:46" itemprop="dateModified" datetime="2019-09-08T10:11:46+08:00">2019-09-08</time>
+              </span>
+            
+          
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-07-24T22:31:35+08:00" content="2019-07-24">
-          07-24
-        </time>
-      </div>
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/数学/" itemprop="url" rel="index"><span itemprop="name">数学</span></a></span>
 
-    </header>
-  </article>
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/数学/概率统计/" itemprop="url" rel="index"><span itemprop="name">概率统计</span></a></span>
 
+                
+                
+              
+            </span>
+          
 
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          <br>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/07/24/最长上升子序列(LIS)的nlogn算法/" itemprop="url">
-            
-              <span itemprop="name">最长上升子序列(LIS)的nlogn算法</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-07-24T22:21:29+08:00" content="2019-07-24">
-          07-24
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/07/24/Biject Inside/" itemprop="url">
-            
-              <span itemprop="name">Biject Inside</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-07-24T22:19:15+08:00" content="2019-07-24">
-          07-24
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+      
+        <p><strong>Markov不等式</strong>：$Z0 <span class="math inline">\(是随机变量。对于所有\)</span>t0$，有 <span class="math display">\[
+P(Z\geq t)\leq \frac{E[Z]}{t}
+\]</span> 证明：</p>
+<p><span class="math inline">\(Z\)</span>的最小最大值分别用<span class="math inline">\(a,b\)</span>表示 <span class="math display">\[
+\begin{aligned}
+P(Z\geq t)&amp;=\int_t^bp(z)dz\\
+&amp;\leq \int_a^t\frac{z}{t}p(z)dz+\int_t^b\frac{z}{t}p(z)dz\\
+&amp;=\frac{1}{t}\int_a^bzp(z)dz\\
+&amp;=\frac{E[Z]}{t}
+\end{aligned}
+\]</span></p>
+<p><strong>Chebyshev不等式</strong>：<span class="math inline">\(Z\)</span>是均值为<span class="math inline">\(\mu\)</span>，方差为<span class="math inline">\(\sigma^2\)</span>（有限）的随机变量，对于<span class="math inline">\(t\geq0\)</span>，有 <span class="math display">\[
+P(|Z-\mu|\geq t)\leq \frac{\sigma^2}{t^2}
+\]</span> 证明： <span class="math display">\[
+P(|Z-\mu|\geq t)=P((Z-\mu)^2\geq t^2)
+\]</span> 然后应用Markov不等式。</p>
+<p>令<span class="math inline">\(t=k\sigma\)</span>，得另一种常见形式： <span class="math display">\[
+P(|Z-\mu|\geq k\sigma)\leq \frac{1}{k^2}
+\]</span></p>
+<p>我们想要更强的bound。</p>
+<p>定义随机变量<span class="math inline">\(Z\)</span>的moment-generating function： <span class="math display">\[
+M_Z(s)\triangleq E[e^{sZ}]
+\]</span> <strong>Chernoff bound</strong>：对于任意<span class="math inline">\(t&gt;0\)</span>， <span class="math display">\[
+P(Z\geq t)\leq \min_{s&gt;0}e^{-st}M_Z(s)
+\]</span> 证明：</p>
+<p>对任意<span class="math inline">\(s&gt;0\)</span>， <span class="math display">\[
+\begin{aligned}
+P(Z\geq t)&amp;=P(sZ\geq st)\\
+&amp;=P(e^{sZ}\geq e^{st})\\
+&amp;\leq e^{-st}E[e^{sZ}]\quad\text{Markov不等式}\\
+&amp;=e^{-st}M_Z(s)
+\end{aligned}
+\]</span> 因为对任意<span class="math inline">\(s&gt;0\)</span>成立，自然小于最小的。</p>
+<p><strong>Hoeffding‘s lemma</strong>：随机变量<span class="math inline">\(X\)</span>满足<span class="math inline">\(E[X]=0\)</span>，且<span class="math inline">\(a\leq X\leq b\)</span>[^note]，那么对于任意<span class="math inline">\(s\)</span>，有 <span class="math display">\[
+E[e^{sX}]\leq \exp\left(\frac{s^2(b-a)^2}{8}\right)
+\]</span> <a href="%5Bhttps://en.wikipedia.org/wiki/Hoeffding%27s_lemma%5D(https://en.wikipedia.org/wiki/Hoeffding&#39;s_lemma)">证明</a></p>
+<p><strong>Hoeffding不等式</strong>：<span class="math inline">\(X_1,\dots,X_n\)</span>为独立随机变量，满足<span class="math inline">\(a_i\leq X_i\leq b_i\)</span>。定义<span class="math inline">\(S_n=\sum_{i=1}^n X_i\)</span>，那么对于<span class="math inline">\(t&gt;0\)</span>，有 <span class="math display">\[
+P(S_n-E[S_n]\geq t)\leq e^{\frac{-2t^2}{\sum(b_i-a_i)^2}}\\
+P(S_n-E[S_n]\leq -t)\leq e^{\frac{-2t^2}{\sum(b_i-a_i)^2}}
+\]</span> 证明：</p>
+<p>由Chernoff bound得 <span class="math display">\[
+\begin{aligned}
+P(S_n-E[S_n]\geq t)\leq\min_{s&gt;0}e^{-st}E\left[e^{s(S_n-E[S_n])}\right]
+\end{aligned}
+\]</span> 并且 <span class="math display">\[
+\begin{aligned}
+E\left[e^{s(S_n-E[S_n])}\right]&amp;=\Pi_{i=1}^nE\left[e^{s(X_i-E[X_i])}\right]\quad \text{由于$X_i$相互独立}\\
+&amp;\leq\Pi_{i=1}^n \exp\left(\frac{s^2(b_i-a_i)^2}{8}\right)\quad\text{由Hoeffding&#39;s lemma}
+\end{aligned}
+\]</span> 然后只要求得 <span class="math display">\[
+\text{argmin}_{s&gt;0}-st+\frac{s^2}{8}\sum_{i=1}^n(b_i-a_i)^2
+\]</span> 代入就可得证。</p>
+<p>由第一个公式及<span class="math inline">\(Z_i=-X_i\in[-b_i,-a_i]\)</span>就得第二个公式。两个式子组合起来得到： <span class="math display">\[
+P(|S_n-E[S_n]|\geq t)\leq 2e^{\frac{-2t^2}{\sum(b_i-a_i)^2}}
+\]</span> 如果<span class="math inline">\(X_i\)</span>服从伯努利分布<span class="math inline">\(\text{Ber}(p)\)</span>，那么<span class="math inline">\(a_i=0,b_i=1\)</span>，<span class="math inline">\(S_n\)</span>服从二项分布<span class="math inline">\(\text{ binom}(n,p)\)</span>，那么<span class="math inline">\(E[s_n]=np\)</span>。 <span class="math display">\[
+P(|S_n-np|&gt;t)=p\left(\left|\frac{S_n}{n}-p\right|&gt;\frac{t}{n}\right)\leq 2e^{\frac{-2t^2}{n}}
+\]</span> 令<span class="math inline">\(t/n=\epsilon\)</span>，得： <span class="math display">\[
+p\left(\left|\frac{1}{n}\sum_{i=1}^nX_i-p\right|&gt;\epsilon\right)\leq 2e^{-2n\epsilon^2}
+\]</span></p>
+<p><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>: 那么由<span class="math inline">\(E[X]=0\)</span>可得<span class="math inline">\(a\leq 0\leq b\)</span></p>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1" role="doc-endnote"><p>note<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/07/24/Superior Substring/" itemprop="url">
-            
-              <span itemprop="name">Superior Substring</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-07-24T22:11:52+08:00" content="2019-07-24">
-          07-24
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+
+    
+
+    
+      
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/08/31/感知机/" rel="next" title="感知机">
+                <i class="fa fa-chevron-left"></i> 感知机
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/archives/2019/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/archives/2019/">1</a><span class="page-number current">2</span>
-  </nav>
+  </article>
 
 
+  </div>
 
 
           </div>
           
+
+  
+
+
 
         </div>
         
@@ -771,6 +843,10 @@
 
 
   
+  <script src="/js/scrollspy.js?v=7.2.0"></script>
+<script src="/js/post-details.js?v=7.2.0"></script>
+
+
 
   <script src="/js/next-boot.js?v=7.2.0"></script>
 
@@ -845,6 +921,8 @@
 
 
 
+
+  
 
 
 
