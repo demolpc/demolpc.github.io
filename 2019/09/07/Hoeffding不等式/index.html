@@ -94,17 +94,17 @@
   };
 </script>
 
-  <meta name="description" content="Markov不等式：$Z0 \(是随机变量。对于所有\)t0$，有 \[ P(Z\geq t)\leq \frac{E[Z]}{t} \] 证明： \(Z\)的最小最大值分别用\(a,b\)表示 \[ \begin{aligned} P(Z\geq t)&amp;amp;=\int_t^bp(z)dz\\ &amp;amp;\leq \int_a^t\frac{z}{t}p(z)dz+\int_t^b">
+  <meta name="description" content="Markov不等式：随机变量\(Z\geq 0\)。对于所有\(t\geq 0\)，有 \[ P(Z\geq t)\leq \frac{E[Z]}{t} \] 证明： \(Z\)的最小最大值分别用\(a,b\)表示 \[ \begin{aligned} P(Z\geq t)&amp;amp;=\int_t^bp(z)dz\\ &amp;amp;\leq \int_a^t\frac{z}{t}p(z)d">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hoeffding不等式">
 <meta property="og:url" content="http://yoursite.com/2019/09/07/Hoeffding不等式/index.html">
 <meta property="og:site_name" content="demolpc的博客">
-<meta property="og:description" content="Markov不等式：$Z0 \(是随机变量。对于所有\)t0$，有 \[ P(Z\geq t)\leq \frac{E[Z]}{t} \] 证明： \(Z\)的最小最大值分别用\(a,b\)表示 \[ \begin{aligned} P(Z\geq t)&amp;amp;=\int_t^bp(z)dz\\ &amp;amp;\leq \int_a^t\frac{z}{t}p(z)dz+\int_t^b">
+<meta property="og:description" content="Markov不等式：随机变量\(Z\geq 0\)。对于所有\(t\geq 0\)，有 \[ P(Z\geq t)\leq \frac{E[Z]}{t} \] 证明： \(Z\)的最小最大值分别用\(a,b\)表示 \[ \begin{aligned} P(Z\geq t)&amp;amp;=\int_t^bp(z)dz\\ &amp;amp;\leq \int_a^t\frac{z}{t}p(z)d">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-08T02:11:46.304Z">
+<meta property="og:updated_time" content="2019-09-08T02:28:05.685Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hoeffding不等式">
-<meta name="twitter:description" content="Markov不等式：$Z0 \(是随机变量。对于所有\)t0$，有 \[ P(Z\geq t)\leq \frac{E[Z]}{t} \] 证明： \(Z\)的最小最大值分别用\(a,b\)表示 \[ \begin{aligned} P(Z\geq t)&amp;amp;=\int_t^bp(z)dz\\ &amp;amp;\leq \int_a^t\frac{z}{t}p(z)dz+\int_t^b">
+<meta name="twitter:description" content="Markov不等式：随机变量\(Z\geq 0\)。对于所有\(t\geq 0\)，有 \[ P(Z\geq t)\leq \frac{E[Z]}{t} \] 证明： \(Z\)的最小最大值分别用\(a,b\)表示 \[ \begin{aligned} P(Z\geq t)&amp;amp;=\int_t^bp(z)dz\\ &amp;amp;\leq \int_a^t\frac{z}{t}p(z)d">
 
 
 
@@ -401,7 +401,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-09-08 10:11:46" itemprop="dateModified" datetime="2019-09-08T10:11:46+08:00">2019-09-08</time>
+                <time title="修改时间：2019-09-08 10:28:05" itemprop="dateModified" datetime="2019-09-08T10:28:05+08:00">2019-09-08</time>
               </span>
             
           
@@ -462,7 +462,7 @@
       
 
       
-        <p><strong>Markov不等式</strong>：$Z0 <span class="math inline">\(是随机变量。对于所有\)</span>t0$，有 <span class="math display">\[
+        <p><strong>Markov不等式</strong>：随机变量<span class="math inline">\(Z\geq 0\)</span>。对于所有<span class="math inline">\(t\geq 0\)</span>，有 <span class="math display">\[
 P(Z\geq t)\leq \frac{E[Z]}{t}
 \]</span> 证明：</p>
 <p><span class="math inline">\(Z\)</span>的最小最大值分别用<span class="math inline">\(a,b\)</span>表示 <span class="math display">\[
@@ -473,7 +473,7 @@ P(Z\geq t)&amp;=\int_t^bp(z)dz\\
 &amp;=\frac{E[Z]}{t}
 \end{aligned}
 \]</span></p>
-<p><strong>Chebyshev不等式</strong>：<span class="math inline">\(Z\)</span>是均值为<span class="math inline">\(\mu\)</span>，方差为<span class="math inline">\(\sigma^2\)</span>（有限）的随机变量，对于<span class="math inline">\(t\geq0\)</span>，有 <span class="math display">\[
+<p><strong>Chebyshev不等式</strong>：随机变量<span class="math inline">\(Z\)</span>均值为<span class="math inline">\(\mu\)</span>，方差为<span class="math inline">\(\sigma^2\)</span>（有限），对于<span class="math inline">\(t\geq0\)</span>，有 <span class="math display">\[
 P(|Z-\mu|\geq t)\leq \frac{\sigma^2}{t^2}
 \]</span> 证明： <span class="math display">\[
 P(|Z-\mu|\geq t)=P((Z-\mu)^2\geq t^2)
@@ -495,7 +495,7 @@ P(Z\geq t)&amp;=P(sZ\geq st)\\
 &amp;=e^{-st}M_Z(s)
 \end{aligned}
 \]</span> 因为对任意<span class="math inline">\(s&gt;0\)</span>成立，自然小于最小的。</p>
-<p><strong>Hoeffding‘s lemma</strong>：随机变量<span class="math inline">\(X\)</span>满足<span class="math inline">\(E[X]=0\)</span>，且<span class="math inline">\(a\leq X\leq b\)</span>[^note]，那么对于任意<span class="math inline">\(s\)</span>，有 <span class="math display">\[
+<p><strong>Hoeffding‘s lemma</strong>：随机变量<span class="math inline">\(X\)</span>满足<span class="math inline">\(E[X]=0\)</span>，且<span class="math inline">\(a\leq X\leq b\)</span><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>，那么对于任意<span class="math inline">\(s\)</span>，有 <span class="math display">\[
 E[e^{sX}]\leq \exp\left(\frac{s^2(b-a)^2}{8}\right)
 \]</span> <a href="%5Bhttps://en.wikipedia.org/wiki/Hoeffding%27s_lemma%5D(https://en.wikipedia.org/wiki/Hoeffding&#39;s_lemma)">证明</a></p>
 <p><strong>Hoeffding不等式</strong>：<span class="math inline">\(X_1,\dots,X_n\)</span>为独立随机变量，满足<span class="math inline">\(a_i\leq X_i\leq b_i\)</span>。定义<span class="math inline">\(S_n=\sum_{i=1}^n X_i\)</span>，那么对于<span class="math inline">\(t&gt;0\)</span>，有 <span class="math display">\[
@@ -516,16 +516,15 @@ E\left[e^{s(S_n-E[S_n])}\right]&amp;=\Pi_{i=1}^nE\left[e^{s(X_i-E[X_i])}\right]\
 \]</span> 代入就可得证。</p>
 <p>由第一个公式及<span class="math inline">\(Z_i=-X_i\in[-b_i,-a_i]\)</span>就得第二个公式。两个式子组合起来得到： <span class="math display">\[
 P(|S_n-E[S_n]|\geq t)\leq 2e^{\frac{-2t^2}{\sum(b_i-a_i)^2}}
-\]</span> 如果<span class="math inline">\(X_i\)</span>服从伯努利分布<span class="math inline">\(\text{Ber}(p)\)</span>，那么<span class="math inline">\(a_i=0,b_i=1\)</span>，<span class="math inline">\(S_n\)</span>服从二项分布<span class="math inline">\(\text{ binom}(n,p)\)</span>，那么<span class="math inline">\(E[s_n]=np\)</span>。 <span class="math display">\[
+\]</span> 如果<span class="math inline">\(X_i\)</span>服从伯努利分布<span class="math inline">\(\text{Ber}(p)\)</span>，那么<span class="math inline">\(a_i=0,b_i=1\)</span>，<span class="math inline">\(S_n\)</span>服从二项分布<span class="math inline">\(\text{ binom}(n,p)\)</span>，<span class="math inline">\(E[s_n]=np\)</span>。 <span class="math display">\[
 P(|S_n-np|&gt;t)=p\left(\left|\frac{S_n}{n}-p\right|&gt;\frac{t}{n}\right)\leq 2e^{\frac{-2t^2}{n}}
-\]</span> 令<span class="math inline">\(t/n=\epsilon\)</span>，得： <span class="math display">\[
+\]</span> 令<span class="math inline">\(\frac{t}{n}=\epsilon\)</span>，得： <span class="math display">\[
 p\left(\left|\frac{1}{n}\sum_{i=1}^nX_i-p\right|&gt;\epsilon\right)\leq 2e^{-2n\epsilon^2}
 \]</span></p>
-<p><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>: 那么由<span class="math inline">\(E[X]=0\)</span>可得<span class="math inline">\(a\leq 0\leq b\)</span></p>
 <section class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn1" role="doc-endnote"><p>note<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1" role="doc-endnote"><p>由<span class="math inline">\(E[X]=0\)</span>可得<span class="math inline">\(a\leq 0\leq b\)</span><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
