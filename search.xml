@@ -18,9 +18,12 @@
       </categories>
   </entry>
   <entry>
-    <title></title>
+    <title><![CDATA[坐标系转换]]></title>
     <url>%2F2019%2F08%2F25%2F%E5%9D%90%E6%A0%87%E7%B3%BB%E8%BD%AC%E6%8D%A2%2F</url>
     <content type="text"><![CDATA[方向余弦矩阵（DCM） \(\mathbf{r}_A,\mathbf{r}_B\)分别为向量\(\mathbf{r}\)在坐标系\(A，B\)中的坐标，由 \[ \mathbf{r}= \begin{pmatrix}\mathbf{i}_B &amp; \mathbf{j}_B &amp; \mathbf{k}_B \end{pmatrix}\mathbf{r}_B=\begin{pmatrix}\mathbf{i}_A &amp; \mathbf{j}_A &amp; \mathbf{k}_A \end{pmatrix}\mathbf{r}_A \] 得： \[ \begin{aligned} \mathbf{r}_B&amp;=\begin{pmatrix}\mathbf{i}_B^\intercal\\ \mathbf{j}_B^\intercal\\ \mathbf{k}_B^\intercal \end{pmatrix}\begin{pmatrix}\mathbf{i}_A &amp; \mathbf{j}_A &amp; \mathbf{k}_A \end{pmatrix}\mathbf{r}_A\\ &amp;\triangleq R_{BA}\mathbf{r}_A \end{aligned} \] \(R_{BA}\)表示从\(A\)到\(B\)的坐标转换矩阵。 由\(R_{BA}\)的定义还可得基变换： \[ \begin{pmatrix}\mathbf{i}_A &amp; \mathbf{j}_A &amp; \mathbf{k}_A \end{pmatrix}=\begin{pmatrix}\mathbf{i}_B &amp; \mathbf{j}_B &amp; \mathbf{k}_B \end{pmatrix}R_{BA} \] 欧拉角 intrinsic rotation是指绕当前坐标系（而不是某个固定坐标系）的轴转动。 \(A\)绕某轴逆时针旋转\(\theta\)，得到\(B\)。对于\(R_{BA}\)，根据定义得出如下结果1： 绕\(X\)轴旋转 \[ R_x= \begin{bmatrix} 1 &amp; 0 &amp; 0 \\ 0 &amp; c_\theta &amp; s_\theta \\ 0 &amp; -s_\theta &amp; c_\theta \end{bmatrix} \] 绕\(Y\)轴旋转 \[ R_y= \begin{bmatrix} c_\theta &amp; 0 &amp; -s_\theta \\ 0 &amp; 1 &amp; 0\\ s_\theta &amp; 0 &amp; c_\theta \end{bmatrix} \] 绕\(Z\)轴旋转 \[ R_z= \begin{bmatrix} c_\theta &amp; s_\theta &amp; 0\\ -s_\theta &amp; c_\theta &amp; 0\\ 0 &amp; 0 &amp; 1 \end{bmatrix} \] 如果按\(Z\rightarrow Y\rightarrow X\)的顺序转动， \[ R_{BA}=R_xR_yR_z=\begin{bmatrix} c_yc_z &amp; c_ys_z &amp; -s_y \\ s_xs_yc_z-c_xs_z &amp; s_xs_ys_z+c_xc_z &amp; s_xc_y \\ c_xs_yc_z+s_xs_z &amp; c_xs_ys_z-s_xc_z &amp; c_xc_y \end{bmatrix} \] 可得欧拉角和DCM的转换关系： \[ \text{tan}(\theta_z)=\frac {R_{12}} {R_{11}}\\ \text{sin}(\theta_y)=-R_{13}\\ \text{tan}(\theta_x)=\frac {R_{23}} {R_{33}} \] 若是小角度转动， \[ \begin{equation} R=\begin{bmatrix} 1 &amp; \theta_z &amp; -\theta_y\\ -\theta_z &amp; 1 &amp; \theta_x\\ \theta_y &amp; -\theta_x &amp; 1 \end{bmatrix}=I-[\theta]_\times \end{equation} \] 可见小角度转动与转动顺序无关（即只与绕XYZ各轴转过的角度有关。如果只有俩轴，比如Z-&gt;X-&gt;Z，那么未出现的轴角度为0，出现两次的轴的角度相加）。 Extrinsic rotation 设固定坐标系为\(A\)。坐标系\(B\)绕\(A\)的\(\mathbf{u}\)轴转动角度\(\phi\)，这个转动用\(R_{\phi \mathbf{u}}\)表示，得坐标系\(C\)。求\(R_{CA}\)。 首先 \[ R_{CA}=R_{BD} \] 其中\(D\)为\(A\)绕\(\mathbf{u}\)轴转动角度\(-\phi\)得到。这个结论对于二维转动很直观，对于三维其实也容易看出。按定义，只要证明两对坐标系的基的内积相等即可。把基分解到平行于转轴和垂直于转轴。平行部分的内积显然不变，垂直部分由二维情况可知也不变，且平行于垂直部分内积为0。因此得证。 \[ R_{BD}=R_{BA}R_{AD}=R_{BA}R_{DA}^{-1}=R_{BA}R_{-\phi \mathbf{u}}^{-1}=R_{BA}R_{\phi \mathbf{u}} \] 因此得到结论，绕固定坐标系的轴转动，\(R\)是乘在右边的。 四元数 \[ \mathbf{x}_G=\mathbf{q}_{GL}\otimes \mathbf{x}_L\otimes\mathbf{q}^*_{GL} \] 其中G表示global，或者n系；L表示local，或者b系。 这样定义是为了和旋转三维向量的公式形式保持一致。 运动方程 四元数 如果是在L系中表达扰动（即上述的intrinsic rotation）， \[ q(t+\Delta t)=q(t)\otimes\Delta q_L=q(t)\otimes\text{Exp}(\Delta\phi_L) \] \[ \begin{aligned} \dot{q}&amp;\triangleq \lim_{\Delta t\to 0}\frac{q(t+\Delta t)-q(t)}{\Delta t}\\ &amp;=\lim_{\Delta t\to 0}\frac{q\otimes\Delta q_L-q}{\Delta t}\\ &amp;=\lim_{\Delta t\to 0}\frac{q\otimes\left(\begin{bmatrix}1\\\Delta\phi_L/2\end{bmatrix}-\begin{bmatrix}1\\0\end{bmatrix}\right)}{\Delta t}\\ &amp;=\lim_{\Delta t\to 0}\frac{q\otimes\begin{bmatrix}0\\\Delta\phi_L/2\end{bmatrix}}{\Delta t}\\ &amp;=\frac{1}{2}q\otimes \omega_L \end{aligned} \] 其中\(\text{Exp}(\Delta\phi_L)\)用了小角度近似。 \(s_\theta\)放置位置记忆方法：放在转动轴的上一列（循环）。↩︎]]></content>
+      <tags>
+        <tag>四元数</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[四元数]]></title>
@@ -70,9 +73,9 @@
         <category>SLAM</category>
       </categories>
       <tags>
-        <tag>ICP</tag>
-        <tag>SVD</tag>
         <tag>四元数</tag>
+        <tag>SVD</tag>
+        <tag>ICP</tag>
       </tags>
   </entry>
   <entry>
