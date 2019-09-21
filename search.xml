@@ -73,9 +73,9 @@
         <category>SLAM</category>
       </categories>
       <tags>
-        <tag>四元数</tag>
-        <tag>SVD</tag>
         <tag>ICP</tag>
+        <tag>SVD</tag>
+        <tag>四元数</tag>
       </tags>
   </entry>
   <entry>
