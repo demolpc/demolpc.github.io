@@ -101,7 +101,7 @@
 <meta property="og:site_name" content="demolpc的博客">
 <meta property="og:description" content="正类用+1表示，负类用-1表示，希望学得 \[ f(\mathbf{x})=\text{sign}(\mathbf{w}\cdot\mathbf{x}+b) \] \(\mathbf{w}\cdot\mathbf{x}+b=0\)是一个超平面，希望它能完全分隔正类/负类。这里假设这是可以做到的，称为线性可分。 损失函数 任一点\(\mathbf{x}_0\)到超平面的距离为： \[ \f">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-31T08:18:41.805Z">
+<meta property="og:updated_time" content="2019-09-21T03:53:58.110Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="感知机">
 <meta name="twitter:description" content="正类用+1表示，负类用-1表示，希望学得 \[ f(\mathbf{x})=\text{sign}(\mathbf{w}\cdot\mathbf{x}+b) \] \(\mathbf{w}\cdot\mathbf{x}+b=0\)是一个超平面，希望它能完全分隔正类/负类。这里假设这是可以做到的，称为线性可分。 损失函数 任一点\(\mathbf{x}_0\)到超平面的距离为： \[ \f">
@@ -386,13 +386,23 @@
                 
               
 
-              <time title="创建时间：2019-08-31 11:28:50 / 修改时间：16:18:41" itemprop="dateCreated datePublished" datetime="2019-08-31T11:28:50+08:00">2019-08-31</time>
+              <time title="创建时间：2019-08-31 11:28:50" itemprop="dateCreated datePublished" datetime="2019-08-31T11:28:50+08:00">2019-08-31</time>
             </span>
           
 
           
             
 
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-09-21 11:53:58" itemprop="dateModified" datetime="2019-09-21T11:53:58+08:00">2019-09-21</time>
+              </span>
             
           
 
@@ -480,12 +490,12 @@ y_i(\mathbf{w}+\eta y_i\mathbf{x}_i)\cdot \mathbf{x}_i&amp;=y_i\mathbf{w}\cdot \
 &amp;\geq y_i\mathbf{w}\cdot \mathbf{x}_i
 \end{aligned}
 \]</span></p>
-<p>如果更新后<span class="math inline">\(y_i\mathbf{w}\cdot \mathbf{x}_i&lt;0\)</span>，下一轮继续对它更新，直到对它分类正确为止。</p>
+<p>所以更新后更接近正确分类（<span class="math inline">\(y_i\mathbf{w}\cdot \mathbf{x}_i&gt;0\)</span>）。</p>
 <h1 id="算法收敛性">算法收敛性</h1>
 <p>从上面的过程可以看出，在纠正一个误分类点时，可能会使原来正确分类的点被误分类。如何证明算法收敛？</p>
 <p>因为线性可分，存在<span class="math inline">\(\|\mathbf{w}_f\|=1\)</span>，使得 <span class="math display">\[
 \forall i\quad y_i\mathbf{w}_f\cdot\mathbf{x}_i\geq\min_n y_n\mathbf{w}_f\cdot\mathbf{x}_n\triangleq\gamma&gt;0
-\]</span> 目标是要证明<span class="math inline">\(\mathbf{w}_f\)</span>和<span class="math inline">\(\mathbf{w}_{t}\)</span>的单位向量的内积是随<span class="math inline">\(t\)</span>增大而增大的，但又是不大于1的，因此会收敛。</p>
+\]</span> <span class="math inline">\(\mathbf{w}_k\)</span>表示第<span class="math inline">\(k\)</span>轮更新后的参数，<span class="math inline">\(\mathbf{w}_0\)</span>设为全0向量。</p>
 <p>假设<span class="math inline">\((\mathbf{x}_i,y_i)\)</span>是第<span class="math inline">\(k\)</span>轮更新中被选中的误分类点 <span class="math display">\[
 \begin{aligned}
 \mathbf{w}_f\cdot\mathbf{w}_{k}&amp;=\mathbf{w}_f\cdot(\mathbf{w}_{k-1}+\eta y_i\mathbf{x}_i)\\
@@ -622,7 +632,7 @@ k\leq \left(\frac{R}{\gamma}\right)^2
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">14</span>
+          <span class="site-state-item-count">22</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -678,7 +688,9 @@ k\leq \left(\frac{R}{\gamma}\right)^2
         
           
         
-        <span class="site-state-item-count">3</span>
+          
+        
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">标签</span>
         </a>
       </div>
