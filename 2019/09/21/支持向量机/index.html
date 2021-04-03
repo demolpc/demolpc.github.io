@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="hard-margin 线性可分 假设数据点是线性可分的，即存在\((b,\mathbf{w})\)满足 \[ y_n(\mathbf{w}^T\mathbf{x}_n+b)&gt;0 \quad n&#x3D;1,\dots,N \] \((b,\mathbf{w})\)和\((\frac{b}{\rho},\frac{\mathbf{w}}{\rho})\)表示同样的超平面。令 \[ \rho">
+<meta property="og:type" content="article">
+<meta property="og:title" content="支持向量机">
+<meta property="og:url" content="http://yoursite.com/2019/09/21/%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA/index.html">
+<meta property="og:site_name" content="demolpc的博客">
+<meta property="og:description" content="hard-margin 线性可分 假设数据点是线性可分的，即存在\((b,\mathbf{w})\)满足 \[ y_n(\mathbf{w}^T\mathbf{x}_n+b)&gt;0 \quad n&#x3D;1,\dots,N \] \((b,\mathbf{w})\)和\((\frac{b}{\rho},\frac{\mathbf{w}}{\rho})\)表示同样的超平面。令 \[ \rho">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-09-21T03:56:27.000Z">
+<meta property="article:modified_time" content="2019-09-22T11:44:53.896Z">
+<meta property="article:author" content="demolpc">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/2019/09/21/%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>支持向量机 | demolpc的博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">demolpc的博客</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/21/%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="demolpc">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="demolpc的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          支持向量机
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-09-21 11:56:27" itemprop="dateCreated datePublished" datetime="2019-09-21T11:56:27+08:00">2019-09-21</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-09-22 19:44:53" itemprop="dateModified" datetime="2019-09-22T19:44:53+08:00">2019-09-22</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">机器学习</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="hard-margin">hard-margin</h1>
+<h2 id="线性可分">线性可分</h2>
+<p>假设数据点是线性可分的，即存在<span class="math inline">\((b,\mathbf{w})\)</span>满足 <span class="math display">\[
+y_n(\mathbf{w}^T\mathbf{x}_n+b)&gt;0 \quad n=1,\dots,N
+\]</span> <span class="math inline">\((b,\mathbf{w})\)</span>和<span class="math inline">\((\frac{b}{\rho},\frac{\mathbf{w}}{\rho})\)</span>表示同样的超平面。令 <span class="math display">\[
+\rho = \min_{n=1,\dots,N}y_n(\mathbf{w}^T\mathbf{x}_n+b)
+\]</span> 则对于同样的超平面<span class="math inline">\((b/\rho,\mathbf{w}/\rho)\)</span>，有 <span class="math display">\[
+\min_{n=1,\dots,N}y_n\left(\frac{\mathbf{w}^T}{\rho}\mathbf{x}_n+\frac{b}{\rho}\right)=\frac{1}{\rho}\min_{n=1,\dots,N}y_n(\mathbf{w}^T\mathbf{x}_n+b)=\frac{\rho}{\rho}=1
+\]</span> 因此可定义超平面<span class="math inline">\(h=(b,\mathbf{w})\)</span>满足 <span class="math display">\[
+\min_{n=1,\dots,N}y_n(\mathbf{w}^T\mathbf{x}_n+b)=1
+\]</span> 点<span class="math inline">\(\mathbf{x}\)</span>到<span class="math inline">\(h\)</span>的距离为 <span class="math display">\[
+d(\mathbf{x},h)=\frac{|\mathbf{w}^T\mathbf{x}+b|}{\|\mathbf{w}\|}
+\]</span> 由于<span class="math inline">\(y_n=\pm1\)</span>且线性可分 <span class="math display">\[
+|\mathbf{w}^T\mathbf{x}+b|=|y_n(\mathbf{w}^T\mathbf{x}+b)|=y_n(\mathbf{w}^T\mathbf{x}+b)
+\]</span> 那么 <span class="math display">\[
+d(\mathbf{x}_n,h)=\frac{y_n(\mathbf{w}^T\mathbf{x}_n+b)}{\|\mathbf{w}\|}
+\]</span> 所有点到超平面距离的最小值称为<strong>margin</strong>： <span class="math display">\[
+\min_{n=1,\dots,N}d(\mathbf{x}_n,h)=\frac{1}{\|\mathbf{w}\|}\cdot\min_{n=1,\dots,N}y_n(\mathbf{w}^T\mathbf{x}_n+b)=\frac{1}{\|\mathbf{w}\|}
+\]</span> 我们希望得到margin最大的超平面。让<span class="math inline">\(\frac{1}{\|\mathbf{w}\|}\)</span>最大也就是让<span class="math inline">\(\mathbf{w}^T\mathbf{w}\)</span>最小，因此问题归结于： <span class="math display">\[
+\begin{aligned}
+\min_{b,\mathbf{w}}&amp;\quad\frac{1}{2}\mathbf{w}^T\mathbf{w}\\
+s.t.&amp;\quad\min_{n=1,\dots,N}y_n(\mathbf{w}^T\mathbf{x}_n+b)=1
+\end{aligned}
+\]</span> ### 求解</p>
+<p>为了容易求解，可以把条件 <span class="math inline">\(\min_ny_n(\mathbf{w}^T\mathbf{x}_n+b)=1\)</span> 换成 <span class="math display">\[
+y_n(\mathbf{w}^T\mathbf{x}_n+b)\ge1 \quad n=1,\dots,N
+\]</span> 这个条件显然比原条件宽松，但是可以证明问题的最优解必然满足<span class="math inline">\(\min_ny_n(\mathbf{w}^T\mathbf{x}_n+b)=1\)</span>。</p>
+<p>用反证法。数据中同时存在正类和负类时必有<span class="math inline">\(\mathbf{w}\neq \mathbf{0}\)</span>（否则<span class="math inline">\(b&gt;0\)</span>且<span class="math inline">\(-b&gt;0\)</span>，矛盾）。</p>
+<p>假设<span class="math inline">\((b^*,\mathbf{w}^*)\)</span>是问题的最优解，满足 <span class="math display">\[
+\rho^*=\min_ny_n(\mathbf{w}^T\mathbf{x}_n+b)&gt;1
+\]</span> 考虑<span class="math inline">\((b,\mathbf{w})=\frac{1}{\rho^*}(b^*,\mathbf{w}^*)\)</span>。则<span class="math inline">\(\|\mathbf{w}\|=\frac{1}{\rho^*}\|\mathbf{w}^*\|&lt;\|\mathbf{w}^*\|\)</span>，与<span class="math inline">\((b^*,\mathbf{w}^*)\)</span>是最优解矛盾，得证。</p>
+<p>那么问题变为 <span class="math display">\[
+\begin{aligned}
+\min_{b,\mathbf{w}}&amp;\quad\frac{1}{2}\mathbf{w}^T\mathbf{w}\\
+s.t.&amp;\quad y_n(\mathbf{w}^T\mathbf{x}_n+b)\ge1\quad\text{for all } n
+\end{aligned}
+\label{problem1}\tag{1}
+\]</span> 这就是<strong>svm的primal问题</strong>，是个二次规划的问题。</p>
+<h4 id="二次规划">二次规划</h4>
+<p>标准形式： <span class="math display">\[
+\mathbf{u}^*\leftarrow \text{QP}(Q,\mathbf{p},A,\mathbf{c})\\
+\begin{aligned}
+\min_{\mathbf{u}}&amp;\quad \frac{1}{2}\mathbf{u}^TQ\mathbf{u}+\mathbf{p}^T\mathbf{u}\\
+s.t.&amp;\quad \mathbf{a}_m^T\mathbf{u}\ge c_m \quad m=1,\dots,M
+\end{aligned}
+\]</span> <span class="math inline">\((\ref{problem1})\)</span>可以写成标准形式： <span class="math display">\[
+\begin{aligned}
+\text{目标函数:}&amp;\quad\mathbf{u}=\begin{bmatrix}
+b\\
+\mathbf{u}
+\end{bmatrix};Q=\begin{bmatrix}
+0 &amp; \mathbf{0}_d^T\\
+\mathbf{0}_d &amp; I_d
+\end{bmatrix};\mathbf{p}=\mathbf{0}_{d+1}\\
+\text{约束:}&amp;\quad \mathbf{a}_n^T=y_n\begin{bmatrix}
+1 &amp; \mathbf{x}_n^T
+\end{bmatrix};c_n=1;M=N
+\end{aligned}
+\]</span> 其中<span class="math inline">\(d\)</span>为<span class="math inline">\(\mathbf{x}\)</span>的维度。</p>
+<p><span class="math inline">\(A=\begin{bmatrix}\mathbf{a}_1^T\\\vdots\\\mathbf{a}_N^T\end{bmatrix}\)</span>与线性规划中的数据矩阵<span class="math inline">\(X\)</span>相似，只不过每行多乘了<span class="math inline">\(y_n\)</span>。</p>
+<p>如果<span class="math inline">\(Q\)</span>是半正定的，二次规划是凸的。这里的<span class="math inline">\(Q\)</span>满足条件。</p>
+<p>令问题的解为超平面<span class="math inline">\(g=(b^*,\mathbf{w}^*)\)</span>，满足<span class="math inline">\(d(\mathbf{x}_n,g)=\frac{1}{\|\mathbf{w}^*\|}\)</span>的数据点称为<strong>support vector</strong>(candidate)。把支持（或者叫支撑更合适）向量以外的数据点拿掉后，得到的最优分离超平面不会变。</p>
+<p>hard margin的意思是超平面到两边margin的范围内没有数据点。</p>
+<h2 id="dual">dual</h2>
+<p>现在考虑svm的对偶问题，因为在后面使用特征变换时会用到。</p>
+<p>定义Lagrange函数： <span class="math display">\[
+L(b,\mathbf{w},\alpha)=\frac{1}{2}\mathbf{w}^T\mathbf{w}+\sum_{n=1}^N\alpha_n(1-y_n(\mathbf{w}^T\mathbf{x}_n+b))
+\]</span> 那么原问题和以下问题等价， <span class="math display">\[
+\min_{b,\mathbf{w}}\left(\max_{\text{all }\alpha_n\ge0}L(b,\mathbf{w},\alpha)\right)
+\]</span> 因为如果<span class="math inline">\((b,\mathbf{w})\)</span>不满足条件<span class="math inline">\(y_n(\mathbf{w}^T\mathbf{x}_n+b)\ge1\)</span>，那么<span class="math inline">\(\max_{\alpha_n\ge0}\alpha_n(1-y_n(\mathbf{w}^T\mathbf{x}_n+b))\to\infty\)</span>。反之，如果<span class="math inline">\((b,\mathbf{w})\)</span>满足所有条件，<span class="math inline">\(\max_{\text{all }\alpha_n\ge0}\sum_{n=1}^N\alpha_n(1-y_n(\mathbf{w}^T\mathbf{x}_n+b))=0\)</span>，即<span class="math inline">\(\max_{\text{all }\alpha_n\ge0}L(b,\mathbf{w},\alpha)=\frac{1}{2}\mathbf{w}^T\mathbf{w}\)</span>。</p>
+<p>对于任意满足要求的<span class="math inline">\(\alpha&#39;\)</span>，因为<span class="math inline">\(\max_{\text{all }\alpha_n\ge0}L(b,\mathbf{w},\alpha)\ge L(b,\mathbf{w},\alpha&#39;)\)</span>，所以 <span class="math display">\[
+\min_{b,\mathbf{w}}\left(\max_{\text{all }\alpha_n\ge0}L(b,\mathbf{w},\alpha)\right)\ge\min_{b,\mathbf{w}}L(b,\mathbf{w},\alpha&#39;)
+\]</span> 由于上式对于任意<span class="math inline">\(\alpha&#39;\)</span>都成立，自然应该大于等于其中的最大者，即： <span class="math display">\[
+\min_{b,\mathbf{w}}\left(\max_{\text{all }\alpha_n\ge0}L(b,\mathbf{w},\alpha)\right)\ge\max_{\text{all }\alpha&#39;_n\ge0}\min_{b,\mathbf{w}}L(b,\mathbf{w},\alpha&#39;)
+\]</span> 右边换用符号<span class="math inline">\(\alpha\)</span>，即 <span class="math display">\[
+\min_{b,\mathbf{w}}\left(\max_{\text{all }\alpha_n\ge0}L(b,\mathbf{w},\alpha)\right)\ge\max_{\text{all }\alpha_n\ge0}\left(\min_{b,\mathbf{w}}L(b,\mathbf{w},\alpha)\right)
+\]</span> 上式左边为<strong>primal</strong>，右边为<strong>Lagrange dual</strong>。<span class="math inline">\(\ge\)</span>表示weak duality。</p>
+<p>对于二次规划，如果满足以下条件：</p>
+<ul>
+<li>primal是convex的</li>
+<li>primal存在可行解</li>
+<li>约束是线性的</li>
+</ul>
+<p>那么<span class="math inline">\(\ge\)</span>可用<span class="math inline">\(=\)</span>取代，称为<strong>strong duality</strong>。</p>
+<p>存在<span class="math inline">\((b,\mathbf{w},\alpha)\)</span>，对于两边都是最优解。</p>
+<p>求解dual内层： <span class="math display">\[
+\frac{\partial L}{\partial b}=0\Rightarrow\sum y_n\alpha_n=0\\
+\]</span> <span class="math display">\[
+\frac{\partial L}{\partial \mathbf{w}}=\mathbf{0}\Rightarrow\mathbf{w}=\sum \alpha_ny_n\mathbf{x}_n
+\label{condition1}\tag{2}
+\]</span></p>
+<p>代入之后，dual变为： <span class="math display">\[
+\max_{\text{all }\alpha\ge0,\sum y_n\alpha_n=0,\mathbf{w}=\sum \alpha_ay_n\mathbf{x}_n}-\frac{1}{2}\left\|\sum_{n=1}^N\alpha_ny_n\mathbf{x}_n\right\|^2+\sum_{n=1}^N\alpha_n
+\]</span> 从前面的推导中可见，最优解应满足的（必要）条件有：</p>
+<ul>
+<li>primal有可行解：<span class="math inline">\(y_n(\mathbf{w}^T\mathbf{x}_n+b)\ge1\)</span></li>
+<li>对dual解的限制：<span class="math inline">\(\alpha_n\ge0\)</span></li>
+<li>dual内层最优条件：<span class="math inline">\(\sum y_n\alpha_n=0,\mathbf{w}=\sum \alpha_ay_n\mathbf{x}_n\)</span></li>
+<li>primal内层最优条件(complementary slackness)：<span class="math inline">\(\alpha_n\left(1-y_n(\mathbf{w}^T\mathbf{x}_n+b)\right)=0 \label{slackness}\tag{3}\)</span></li>
+</ul>
+<p>这些称为<strong>KKT条件</strong>，这里也是充分条件（<em>如何证明？</em>）</p>
+<p>将上式最大转为求最小，并展开第一项，得： <span class="math display">\[
+\begin{aligned}
+\min_{\alpha}&amp;\quad\frac{1}{2}\sum_{n=1}^N\sum_{m=1}^N\alpha_n\alpha_my_ny_m\mathbf{x}_n^T\mathbf{x}_m-\sum_{n=1}^N\alpha_n\\
+s.t.&amp;\quad\sum_{n=1}^Ny_n\alpha_n=0\\
+&amp;\quad\alpha_n\ge0\quad n=1,\dots,N
+\end{aligned}
+\]</span> 这就是<strong>svm的dual问题</strong>。写成二次规划的标准形式： <span class="math display">\[
+\begin{aligned}
+\min_{\alpha}&amp;\quad\frac{1}{2}\alpha^TQ\alpha-\mathbf{1}_{N}^T\alpha\\
+s.t.&amp;\quad A\alpha\ge\mathbf{0}_{N+2}
+\end{aligned}
+\]</span> 其中 <span class="math display">\[
+Q_{n,m}=y_ny_m\mathbf{x}_n^T\mathbf{x}_m\\
+A=\begin{bmatrix}
+\mathbf{y}^T\\
+-\mathbf{y}^T\\
+I_{N\times N}
+\end{bmatrix}
+\]</span> <span class="math inline">\(A\)</span>的前两行是因为<span class="math inline">\(\mathbf{y}^T\alpha=0\)</span>等价于<span class="math inline">\(\mathbf{y}^T\alpha\ge0\)</span>且<span class="math inline">\(\mathbf{y}^T\alpha\le0\)</span>。</p>
+<p>可以看到，<span class="math inline">\(Q=X_sX_s^T\)</span>，其中<span class="math inline">\(X_s\)</span>为带符号的数据矩阵： <span class="math display">\[
+\begin{aligned}
+X_s=\begin{bmatrix}
+y_1\mathbf{x}_1^T\\
+\vdots\\
+y_N\mathbf{x}_N^T
+\end{bmatrix}
+\end{aligned}
+\]</span></p>
+<p>因此<span class="math inline">\(Q\)</span>为半正定矩阵，这个二次规划问题是凸的。</p>
+<p>要注意<span class="math inline">\(Q\)</span>是<span class="math inline">\(N\times N\)</span>的矩阵，<span class="math inline">\(N\)</span>比较大时占用很大内存，SMO？</p>
+<h3 id="恢复svm的解">恢复svm的解</h3>
+<p>现已求得最优解<span class="math inline">\(\alpha^*\)</span>，<span class="math inline">\(\mathbf{w}^*\)</span>由<span class="math inline">\((\ref{condition1})\)</span>得出： <span class="math display">\[
+\mathbf{w}^*=\sum \alpha_n^*y_n\mathbf{x}_n
+\]</span> <span class="math inline">\(\mathbf{w}^*\)</span>是<span class="math inline">\(y_n\mathbf{x}_n\)</span>的线性组合，这和感知机的学习算法的结果相似，称为<span class="math inline">\(\mathbf{w}\)</span>由数据表征。</p>
+<p>如果数据中同时有正类和负类，由前面说明过的<span class="math inline">\(\mathbf{w}^*\ne\mathbf{0}\)</span>可知至少存在一个值<span class="math inline">\(\alpha^*_s\ne0\)</span>。那么由<span class="math inline">\((\ref{slackness})\)</span>得： <span class="math display">\[
+y_s(\mathbf{w}^{*T}\mathbf{x}_s+b^*)=1
+\]</span> 可知<span class="math inline">\((\mathbf{x}_s,y_s)\)</span>属于support vector candidates。</p>
+<p>求得： <span class="math display">\[
+\begin{aligned}
+b^*&amp;=y_s-\mathbf{w}^{*T}\mathbf{x}_s\\
+&amp;=y_s-\sum_{n=1}^Ny_n\alpha_n^*\mathbf{x}_n^T\mathbf{x}_s
+\end{aligned}
+\]</span> 容易看到，<span class="math inline">\(\mathbf{w}^{*}\)</span>和<span class="math inline">\(b^*\)</span>可以只用<span class="math inline">\(\alpha_n^*&gt;0\)</span>对应的数据点得到，这些数据点称为support vector。</p>
+<h2 id="kernel-trick">kernel trick</h2>
+<p>如果在<span class="math inline">\(\mathbf{x}\)</span>空间中不是线性可分，考虑特征变换：<span class="math inline">\(\mathbf{z}=\Phi(\mathbf{x})\)</span>，看在<span class="math inline">\(\mathbf{z}\)</span>空间中能否做得更好。设<span class="math inline">\(\mathbf{x}\)</span>的维度为<span class="math inline">\(d\)</span>，<span class="math inline">\(\mathbf{z}\)</span>的维度为<span class="math inline">\(\tilde{d}\)</span>。计算<span class="math inline">\(Q_{n,m}=y_ny_m\mathbf{z}_n^T\mathbf{z}_m\)</span>复杂度为<span class="math inline">\(O(\tilde{d})\)</span>。需要降低计算<span class="math inline">\(\mathbf{z}_n^T\mathbf{z}_m=\Phi(\mathbf{x}_n)^T\Phi(\mathbf{x}_m)\)</span>的复杂度。</p>
+<p>二阶多项式变换：<span class="math inline">\(\Phi_2(\mathbf{x})=(1,x_1,x_2,\dots,x_d,x_1x_1,x_1x_2,\dots,x_dx_d)\)</span>，这里为了后面推导方便，同时包含了<span class="math inline">\(x_ix_j\)</span>和<span class="math inline">\(x_jx_i\)</span>。 <span class="math display">\[
+\begin{aligned}
+\Phi_2(\mathbf{x})^T\Phi_2(\mathbf{x}&#39;)&amp;=1+\sum_{i=1}^dx_ix_i&#39;+\sum_{i=1}^d\sum_{j=1}^dx_ix_jx_i&#39;x_j&#39;\\
+&amp;=1+\sum_{i=1}^dx_ix_i&#39;+\sum_{i=1}^dx_ix_i&#39;\sum_{j=1}^dx_jx_j&#39;\\
+&amp;=1+\mathbf{x}^T\mathbf{x}&#39;+(\mathbf{x}^T\mathbf{x}&#39;)^2
+\end{aligned}
+\]</span> 只需要<span class="math inline">\(O(d)\)</span>的复杂度，而<span class="math inline">\(\tilde{d}=O(d^2)\)</span>。</p>
+<p>kernel就是变换+内积。</p>
+<p>kernel function：<span class="math inline">\(K_\Phi(\mathbf{x},\mathbf{x}&#39;)\triangleq \Phi(\mathbf{x})^T\Phi(\mathbf{x}&#39;)\)</span></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2019/09/07/Hoeffding%E4%B8%8D%E7%AD%89%E5%BC%8F/" rel="prev" title="Hoeffding不等式">
+      <i class="fa fa-chevron-left"></i> Hoeffding不等式
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2019/10/03/numpy/" rel="next" title="numpy">
+      numpy <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#hard-margin"><span class="nav-number">1.</span> <span class="nav-text">hard-margin</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E5%8F%AF%E5%88%86"><span class="nav-number">1.1.</span> <span class="nav-text">线性可分</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BA%8C%E6%AC%A1%E8%A7%84%E5%88%92"><span class="nav-number">1.1.0.1.</span> <span class="nav-text">二次规划</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dual"><span class="nav-number">1.2.</span> <span class="nav-text">dual</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%81%A2%E5%A4%8Dsvm%E7%9A%84%E8%A7%A3"><span class="nav-number">1.2.1.</span> <span class="nav-text">恢复svm的解</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#kernel-trick"><span class="nav-number">1.3.</span> <span class="nav-text">kernel trick</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">demolpc</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">25</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">demolpc</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>
